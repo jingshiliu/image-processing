@@ -11,6 +11,14 @@
 
 using namespace std;
 
+// ---------------------------------------Util Functions Declaration -------------------------------------------------//
+// Util functions are declared at the top the file to make sure all other functions can access the Util Functions
+
+int** getArray(int rows, int cols);
+
+int* getArray(int length);
+
+
 // --------------------------------------- Class Enhancement ---------------------------------------------------------//
 
 
@@ -86,7 +94,7 @@ public:
                 averagingArray[i][j] = average5x5(i, j);
             }
         }
-        debugFile << "Leaving computeAverage5x5 method"
+        debugFile << "Leaving computeAverage5x5 method\n";
     }
 
     int average5x5(int i, int j){
@@ -144,9 +152,19 @@ public:
         }
         debugFile << "Leaving printHistogram method\n";
     }
+
+    void outputImage(int** imageArray, ofstream& outFile){
+        outFile << numRows << " " << numCols << " " << minVal << " " << maxVal <<'\n';
+        for(int i = 2; i < numRows + 2; i++){
+            for(int j = 2; j < numCols + 2; j++){
+                outFile << imageArray[i][j] << " ";
+            }
+            outFile << "\n";
+        }
+    }
 };
 
-// --------------------------------------- Until Functions ---------------------------------------------------------//
+// ---------------------------------- Until Functions Implementation -----------------------------------------------------//
 
 int** getArray(int rows, int cols){
     int** array = new int*[rows];
@@ -167,23 +185,19 @@ int* getArray(int length){
     return array;
 }
 
-
-void outputArray(int** imageArray, ofstream& outFile){
-
-}
-
-
 void useAverageFilter(const char* argv[], Enhancement* enhancement, ofstream& outFile, ofstream& debugFile){
     enhancement->computeAverage5x5(debugFile);
     enhancement->computeHistogram(enhancement->averagingArray, enhancement->histogramAveragingArray ,debugFile);
 
     ofstream averageFile("./" + (string)argv[1] + "_Avg5x5.txt");
     enhancement->imageReformat(enhancement->averagingArray, outFile);
-    averageFile << enhancement->numRows << enhancement->numCols << enhancement->minVal << enhancement->maxVal <<'\n';
-    outputArray(enhancement->averagingArray, averageFile);
+    enhancement->outputImage(enhancement->averagingArray, averageFile);
 
     ofstream histAvgFile("./" + (string)argv[1] + "_Avg5x5_hist.txt");
     enhancement->printHistogram(enhancement->histogramAveragingArray, histAvgFile, debugFile);
+
+    averageFile.close();
+    histAvgFile.close();
 }
 
 void useGaussianFilter(const char* argv[], Enhancement* enhancement, ifstream& maskFile ,ofstream& outFile, ofstream& debugFile){
@@ -193,11 +207,13 @@ void useGaussianFilter(const char* argv[], Enhancement* enhancement, ifstream& m
 
     ofstream gaussFile("./" + (string)argv[1] + "_Gauss5x5.txt");
     enhancement->imageReformat(enhancement->gaussArray, outFile);
-    gaussFile << enhancement->numRows << enhancement->numCols << enhancement->minVal << enhancement->maxVal <<'\n';
-    outputArray(enhancement->gaussArray, outFile);
+    enhancement->outputImage(enhancement->gaussArray, gaussFile);
 
     ofstream histGaussFile("./" + (string)argv[1] + "_Gauss5x5_hist.txt");
     enhancement->printHistogram(enhancement->histogramGaussianArray, histGaussFile, debugFile);
+
+    gaussFile.close();
+    histGaussFile.close();
 }
 
 
@@ -220,4 +236,9 @@ int main(int argc, const char* argv[]){
     }else{
         cout<< "Unknown choice argument entered, please enter either '1' or '2'\n";
     }
+
+    inFile.close();
+    maskFile.close();
+    outFile.close();
+    debugFile.close();
 }
