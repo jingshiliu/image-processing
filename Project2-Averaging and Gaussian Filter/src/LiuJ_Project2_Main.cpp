@@ -11,13 +11,47 @@
 
 using namespace std;
 
+int** getArray(int rows, int cols){
+    int** array = new int*[rows];
+    for(int i = 0; i < rows; i++){
+        array[i] = new int[cols];
+        for(int j = 0; j < cols; j++){
+            array[i][j] = 0;
+        }
+    }
+    return array;
+}
+
+int* getArray(int length){
+    int* array = new int[length];
+    for(int i = 0; i < length; i++){
+        array[i] = 0;
+    }
+    return array;
+}
+
+
 class Enhancement{
+public:
     int numRows, numCols, minVal, maxVal, maskRows, maskCols, maskMin, maskMax, maskWeight;
-    int** mirroredFramedArray, averagingArray, gaussianArray;
-    int* neighborArray, maskArray, histogramAveragingArray, histogramGaussianArray;
+    int** mirroredFramedArray;
+    int** averagingArray;
+    int** gaussianArray;
 
-    Enhancement(){
+    int* neighborArray;
+    int* maskArray;
+    int* histogramAveragingArray;
+    int* histogramGaussianArray;
 
+    Enhancement(ifstream& inFile, ifstream& maskFile){
+        inFile >> numRows >> numCols >> minVal >> maxVal;
+        maskFile >> maskRows >> maskCols >> maskMin >> maskMax;
+        mirroredFramedArray = getArray(numRows + 4, numCols + 4);
+        averagingArray = getArray(numRows + 4, numCols + 4);
+        gaussianArray = getArray(numRows + 4, numCols + 4);
+
+        histogramAveragingArray = getArray(maxVal + 1);
+        histogramGaussianArray = getArray(maxVal + 1);
     }
 
     void loadImage(){
@@ -65,6 +99,15 @@ class Enhancement{
     }
 };
 
+
 int main(int argc, const char* argv[]){
+    ifstream inFile, maskFile;
+    ofstream outFile, debugFile;
+
+    inFile.open(argv[1]);
+    maskFile.open(argv[2]);
+    string choice = argv[3];
+
+    Enhancement* enhancement = new Enhancement(inFile, maskFile);
 
 }
