@@ -11,6 +11,114 @@
 
 using namespace std;
 
+// --------------------------------------- Class Enhancement ---------------------------------------------------------//
+
+
+class Enhancement{
+public:
+    int numRows, numCols, minVal, maxVal, maskRows, maskCols, maskMin, maskMax, maskWeight;
+    int** mirroredFramedArray;
+    int** averagingArray;
+    int** gaussArray;
+
+    int* neighborArray;
+    int* maskArray;
+    int* histogramAveragingArray;
+    int* histogramGaussianArray;
+
+    Enhancement(ifstream& inFile, ifstream& maskFile){
+        inFile >> numRows >> numCols >> minVal >> maxVal;
+        maskFile >> maskRows >> maskCols >> maskMin >> maskMax;
+        mirroredFramedArray = getArray(numRows + 4, numCols + 4);
+        averagingArray = getArray(numRows + 4, numCols + 4);
+        gaussArray = getArray(numRows + 4, numCols + 4);
+
+        histogramAveragingArray = getArray(maxVal + 1);
+        histogramGaussianArray = getArray(maxVal + 1);
+
+        loadImage(inFile);
+        mirroFraming();
+    }
+
+    void loadImage(ifstream& inFile){
+        int num;
+        for(int i = 2; i < numRows + 2; i++){
+            for(int j = 2; j < numCols + 2; j++){
+                inFile >> num;
+                this->mirroredFramedArray[i][j] = num;
+            }
+        }
+    }
+
+    void mirroFraming(){
+        for(int i = 0; i < numRows + 4; i++){
+            // mirror row 2
+            mirroredFramedArray[i][0] = mirroredFramedArray[i][3];
+            // mirror row 1
+            mirroredFramedArray[i][1] = mirroredFramedArray[i][2];
+        }
+        for(int i = 0; i < numCols + 4; i++){
+            // mirror col 2
+            mirroredFramedArray[0][i] = mirroredFramedArray[3][i];
+            //mirror col 1
+            mirroredFramedArray[1][i] = mirroredFramedArray[2][i];
+        }
+    }
+
+    int loadMaskArray(ifstream& maskFile){
+        return 0;
+    }
+
+    void loadNeightborArray(){
+        
+    }
+
+    void computeAverage5x5(ofstream& debugFile){
+
+    }
+
+    int average5x5(){
+        return 0;
+    }
+
+    void computeGaussian5x5(ofstream& debugFile){
+
+    }
+
+    int convolution(){
+
+    }
+
+    void computeHistogram(int** imageArray, int* histogramArray, ofstream& debugFile){
+
+    }
+
+    void imageReformat(int** imageArray, ofstream& outFile){
+        outFile << numRows << numCols << minVal << maxVal << '\n';
+        string str;
+        int curWidth, pixelWidth = to_string(maxVal).length();
+
+        for(int r = 2; r < numRows + 2; r++){
+            for(int c = 2; c < numCols + 2; c++){
+                outFile << imageArray[r][c];
+                str = to_string(imageArray[r][c]);
+                curWidth = str.length();
+                while(curWidth < pixelWidth){
+                    outFile<<' ';
+                    curWidth++;
+                }
+            }
+            outFile << '\n';
+        }
+    }
+
+    void printHistogram(ofstream& outFile, ofstream& debugFile){
+
+    }
+};
+
+// --------------------------------------- Until Functions ---------------------------------------------------------//
+
 int** getArray(int rows, int cols){
     int** array = new int*[rows];
     for(int i = 0; i < rows; i++){
@@ -31,83 +139,56 @@ int* getArray(int length){
 }
 
 
-class Enhancement{
-public:
-    int numRows, numCols, minVal, maxVal, maskRows, maskCols, maskMin, maskMax, maskWeight;
-    int** mirroredFramedArray;
-    int** averagingArray;
-    int** gaussianArray;
+void outputArray(int** imageArray, ofstream& outFile){
 
-    int* neighborArray;
-    int* maskArray;
-    int* histogramAveragingArray;
-    int* histogramGaussianArray;
+}
 
-    Enhancement(ifstream& inFile, ifstream& maskFile){
-        inFile >> numRows >> numCols >> minVal >> maxVal;
-        maskFile >> maskRows >> maskCols >> maskMin >> maskMax;
-        mirroredFramedArray = getArray(numRows + 4, numCols + 4);
-        averagingArray = getArray(numRows + 4, numCols + 4);
-        gaussianArray = getArray(numRows + 4, numCols + 4);
 
-        histogramAveragingArray = getArray(maxVal + 1);
-        histogramGaussianArray = getArray(maxVal + 1);
-    }
+void useAverageFilter(const char* argv[], Enhancement* enhancement, ofstream& outFile, ofstream& debugFile){
+    enhancement->computeAverage5x5(debugFile);
+    enhancement->computeHistogram(enhancement->averagingArray, enhancement->histogramAveragingArray ,debugFile);
 
-    void loadImage(){
+    ofstream averageFile("./" + (string)argv[1] + "_Avg5x5.txt");
+    enhancement->imageReformat(enhancement->averagingArray, outFile);
+    averageFile << enhancement->numRows << enhancement->numCols << enhancement->minVal << enhancement->maxVal <<'\n';
+    outputArray(enhancement->averagingArray, averageFile);
 
-    }
+    ofstream histAvgFile("./" + (string)argv[1] + "_Avg5x5_hist.txt");
+    enhancement->printHistogram(histAvgFile, debugFile);
+}
 
-    void mirroFraming(){
+void useGaussianFilter(const char* argv[], Enhancement* enhancement, ifstream& maskFile ,ofstream& outFile, ofstream& debugFile){
+    enhancement->loadMaskArray(maskFile);
+    enhancement->computeGaussian5x5(debugFile);
+    enhancement->computeHistogram(enhancement->gaussArray, enhancement->histogramGaussianArray, debugFile);
 
-    }
+    ofstream gaussFile("./" + (string)argv[1] + "_Gauss5x5.txt");
+    enhancement->imageReformat(enhancement->gaussArray, outFile);
+    gaussFile << enhancement->numRows << enhancement->numCols << enhancement->minVal << enhancement->maxVal <<'\n';
+    outputArray(enhancement->gaussArray, outFile);
 
-    int loadMaskArray(){
-        return 0;
-    }
+    ofstream histGaussFile("./" + (string)argv[1] + "_Gauss5x5_hist.txt");
+    enhancement->printHistogram(histGaussFile, debugFile);
+}
 
-    void loadNeightborArray(){
-        
-    }
 
-    void computeAverage5x5(){
-
-    }
-
-    int average5x5(){
-        return 0;
-    }
-
-    void computeGaussian5x5(){
-
-    }
-
-    int convolution(){
-
-    }
-
-    void computeHistogram(){
-
-    }
-
-    void imageReformat(){
-
-    }
-
-    void printHistogram(){
-
-    }
-};
-
+// --------------------------------------- Main Function ---------------------------------------------------------//
 
 int main(int argc, const char* argv[]){
     ifstream inFile, maskFile;
-    ofstream outFile, debugFile;
+    ofstream outFile("./output.txt"), debugFile("./debugFile.txt");
 
     inFile.open(argv[1]);
     maskFile.open(argv[2]);
     string choice = argv[3];
 
     Enhancement* enhancement = new Enhancement(inFile, maskFile);
-
+    enhancement->imageReformat(enhancement->mirroredFramedArray, outFile);
+    if(choice == "1"){
+        useAverageFilter(argv, enhancement, outFile, debugFile);
+    }else if(choice == "2"){
+        useGaussianFilter(argv, enhancement, maskFile, outFile, debugFile);
+    }else{
+        cout<< "Unknown choice argument entered, please enter either '1' or '2'\n";
+    }
 }
