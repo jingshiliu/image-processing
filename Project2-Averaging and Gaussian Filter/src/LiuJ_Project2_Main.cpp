@@ -45,7 +45,7 @@ public:
         histogramGaussianArray = getArray(maxVal + 1);
 
         loadImage(inFile);
-        mirroFraming();
+        mirrorFraming();
     }
 
     void loadImage(ifstream& inFile){
@@ -58,7 +58,7 @@ public:
         }
     }
 
-    void mirroFraming(){
+    void mirrorFraming(){
         for(int i = 0; i < numRows + 4; i++){
             // mirror row 2
             mirroredFramedArray[i][0] = mirroredFramedArray[i][3];
