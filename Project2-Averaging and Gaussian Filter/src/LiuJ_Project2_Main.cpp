@@ -66,19 +66,37 @@ public:
     }
 
     int loadMaskArray(ifstream& maskFile){
+        // maskFile >> maskRows >> maskCols >> maskMin >> maskMax;
         return 0;
     }
 
-    void loadNeightborArray(){
-        
+    void loadNeightborArray(int i, int j){
+        int index = 0;
+        for(int r = i - 2; r <= i + 2; r++){
+            for(int c = j - 2; c <= i + 2; c++){
+                neighborArray[index++] = mirroredFramedArray[r][c];
+            }
+        }
     }
 
     void computeAverage5x5(ofstream& debugFile){
-
+        debugFile << "Entering computeAverage5x5 method\n";
+        for(int i = 2; i < numRows + 2; i++){
+            for(int j = 2; j < numCols + 2; j++){
+                averagingArray[i][j] = average5x5(i, j);
+            }
+        }
+        debugFile << "Leaving computeAverage5x5 method"
     }
 
-    int average5x5(){
-        return 0;
+    int average5x5(int i, int j){
+        loadNeightborArray(i, j);
+        int sum = 0;
+
+        for(int i = 0; i < 25; i++){
+            sum += neighborArray[i];
+        }
+        return sum / 25;
     }
 
     void computeGaussian5x5(ofstream& debugFile){
@@ -90,7 +108,13 @@ public:
     }
 
     void computeHistogram(int** imageArray, int* histogramArray, ofstream& debugFile){
-
+        debugFile << "Entering computeHistogram method\n";
+        for(int i = 2; i < numRows + 2; i++){
+            for(int j = 2; j < numCols + 2; j++){
+                histogramArray[imageArray[i][j]]++;
+            }
+        }
+        debugFile << "Leaving computeHistogram method\n";
     }
 
     void imageReformat(int** imageArray, ofstream& outFile){
@@ -112,8 +136,13 @@ public:
         }
     }
 
-    void printHistogram(ofstream& outFile, ofstream& debugFile){
-
+    void printHistogram(int* histogramArray, ofstream& outFile, ofstream& debugFile){
+        debugFile << "Entering printHistogram method\n";
+        outFile << numCols << numCols << minVal << maxVal << '\n';
+        for(int i = 0; i <= maxVal; i++){
+            outFile << i << " " << histogramArray[i] << '\n';
+        }
+        debugFile << "Leaving printHistogram method\n";
     }
 };
 
@@ -154,7 +183,7 @@ void useAverageFilter(const char* argv[], Enhancement* enhancement, ofstream& ou
     outputArray(enhancement->averagingArray, averageFile);
 
     ofstream histAvgFile("./" + (string)argv[1] + "_Avg5x5_hist.txt");
-    enhancement->printHistogram(histAvgFile, debugFile);
+    enhancement->printHistogram(enhancement->histogramAveragingArray, histAvgFile, debugFile);
 }
 
 void useGaussianFilter(const char* argv[], Enhancement* enhancement, ifstream& maskFile ,ofstream& outFile, ofstream& debugFile){
@@ -168,7 +197,7 @@ void useGaussianFilter(const char* argv[], Enhancement* enhancement, ifstream& m
     outputArray(enhancement->gaussArray, outFile);
 
     ofstream histGaussFile("./" + (string)argv[1] + "_Gauss5x5_hist.txt");
-    enhancement->printHistogram(histGaussFile, debugFile);
+    enhancement->printHistogram(enhancement->histogramGaussianArray, histGaussFile, debugFile);
 }
 
 
