@@ -45,6 +45,8 @@ public:
 
         histogramAveragingArray = getArray(maxVal + 1);
         histogramGaussianArray = getArray(maxVal + 1);
+        maskArray = getArray(25);
+        neighborArray = getArray(25);
 
         loadImage(inFile);
         mirrorFraming();
@@ -86,17 +88,24 @@ public:
     }
 
     int loadMaskArray(ifstream& maskFile){
-        // maskFile >> maskRows >> maskCols >> maskMin >> maskMax;
-        return 0;
+        maskFile >> maskRows >> maskCols >> maskMin >> maskMax;
+        int totalWeight = 0, index = 0, curWeight;
+        for (int i = 0; i < maskRows; i++){
+            for(int j = 0; j < maskCols; j++){
+                maskFile >> curWeight;
+                maskArray[index++] = curWeight;
+                totalWeight += curWeight;
+            }
+        }
+        this->maskWeight = totalWeight;
+        return totalWeight;
     }
 
-    void loadNeightborArray(int i, int j){
-
+    void loadNeighborArray(int i, int j){
         int index = 0;
         for(int r = i - 2; r <= i + 2; r++){
             for(int c = j - 2; c <= j + 2; c++){
-                neighborArray[index] = mirroredFramedArray[r][c];
-                index++;
+                neighborArray[index++] = mirroredFramedArray[r][c];
             }
         }
     }
@@ -122,11 +131,25 @@ public:
     }
 
     void computeGaussian5x5(ofstream& debugFile){
-
+        debugFile << "Entering computeGaussian5x5 method\n";
+        for(int i = 2; i < numRows + 2; i++){
+            for(int j = 2; j < numCols + 2; j++){
+                loadNeighborArray(i, j);
+                gaussArray[i][j] = convolution(debugFile);
+            }
+        }
+        debugFile << "Leaving computeGaussian5x5 method\n";
     }
 
-    int convolution(){
-
+    int convolution(ofstream& debugFile){
+        debugFile << "Entering convolution method\n";
+        int result = 0;
+        for(int i = 0; i < 25; i++){
+            result += neighborArray[i] * maskArray[i];
+        }
+        debugFile << "In convolution method, result is: " << result << '\n';
+        debugFile << "Leaving convolution method\n";
+        return result / maskWeight;
     }
 
     void computeHistogram(int** imageArray, int* histogramArray, ofstream& debugFile){
