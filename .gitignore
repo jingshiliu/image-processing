@@ -32,3 +32,4 @@ bin/
 
 a.out
 CMakeLists.txt
+cmake-build-debug
