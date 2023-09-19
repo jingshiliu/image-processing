@@ -18,6 +18,8 @@ int** getArray(int rows, int cols);
 
 int* getArray(int length);
 
+void printArray(int** array, int row, int col);
+
 
 // --------------------------------------- Class Enhancement ---------------------------------------------------------//
 
@@ -64,12 +66,22 @@ public:
             mirroredFramedArray[i][0] = mirroredFramedArray[i][3];
             // mirror row 1
             mirroredFramedArray[i][1] = mirroredFramedArray[i][2];
+
+            // mirror last row
+            mirroredFramedArray[i][numRows+2] = mirroredFramedArray[i][numRows+1];
+            // mirror last second row
+            mirroredFramedArray[i][numRows+3] = mirroredFramedArray[i][numRows];
         }
         for(int i = 0; i < numCols + 4; i++){
             // mirror col 2
             mirroredFramedArray[0][i] = mirroredFramedArray[3][i];
             //mirror col 1
             mirroredFramedArray[1][i] = mirroredFramedArray[2][i];
+
+            // mirror last col
+            mirroredFramedArray[numCols+2][i] = mirroredFramedArray[numCols+1][i];
+            // mirror last second col
+            mirroredFramedArray[numCols+3][i] = mirroredFramedArray[numCols][i];
         }
     }
 
@@ -79,10 +91,12 @@ public:
     }
 
     void loadNeightborArray(int i, int j){
+
         int index = 0;
         for(int r = i - 2; r <= i + 2; r++){
-            for(int c = j - 2; c <= i + 2; c++){
-                neighborArray[index++] = mirroredFramedArray[r][c];
+            for(int c = j - 2; c <= j + 2; c++){
+                neighborArray[index] = mirroredFramedArray[r][c];
+                index++;
             }
         }
     }
@@ -98,11 +112,11 @@ public:
     }
 
     int average5x5(int i, int j){
-        loadNeightborArray(i, j);
         int sum = 0;
-
-        for(int i = 0; i < 25; i++){
-            sum += neighborArray[i];
+        for(int r = i - 2; r <= i + 2; r++){
+            for(int c = j - 2; c <= j + 2; c++){
+                sum += mirroredFramedArray[r][c];
+            }
         }
         return sum / 25;
     }
@@ -126,7 +140,7 @@ public:
     }
 
     void imageReformat(int** imageArray, ofstream& outFile){
-        outFile << numRows << numCols << minVal << maxVal << '\n';
+        outFile << numRows << " " << numCols << " " << minVal << " " << maxVal << '\n';
         string str;
         int curWidth, pixelWidth = to_string(maxVal).length();
 
@@ -215,6 +229,17 @@ void useGaussianFilter(const char* argv[], Enhancement* enhancement, ifstream& m
     gaussFile.close();
     histGaussFile.close();
 }
+
+void printArray(int** array, int row, int col){
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            cout<<array[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    cout<<endl<<endl;
+}
+
 
 
 // --------------------------------------- Main Function ---------------------------------------------------------//
