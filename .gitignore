@@ -31,3 +31,4 @@ bin/
 .DS_Store
 
 a.out
+CMakeLists.txt
