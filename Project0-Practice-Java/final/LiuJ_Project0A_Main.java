@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 
-public class Main {
+public class LiuJ_Project0A_Main {
     public static void processing(Scanner inFile, FileWriter outFile1, FileWriter outFile2, int thrVal, int numRows, int numCols) throws IOException {
         int pixelVal;
 
