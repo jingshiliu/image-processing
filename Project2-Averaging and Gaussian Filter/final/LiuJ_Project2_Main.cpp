@@ -145,7 +145,7 @@ public:
         debugFile << "Entering convolution method\n";
         int result = 0;
         for(int i = 0; i < 25; i++){
-            result += (neighborArray[i] * maskArray[i]);
+            result += neighborArray[i] * maskArray[i];
         }
         debugFile << "In convolution method, result is: " << result << '\n';
         debugFile << "Leaving convolution method\n";
