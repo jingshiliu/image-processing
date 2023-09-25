@@ -102,10 +102,17 @@ public:
         imageFile >> numImageRows >> numImageCols >> imageMin >> imageMax;
         structFile >> numStructRows >> numStructCols >> structMin >> structMax >> rowOrigin >> colOrigin;
 
-        zeroFramedArray = Util::getArray(numImageRows, numImageCols);
-        structArray = Util::getArray(numStructRows, numStructCols);
-        morphArray = Util::getArray(numImageRows, numImageCols);
-        tempArray = Util::getArray(numImageRows, numImageCols);
+        rowFrameSize = numStructRows / 2;
+        colFrameSize = numStructCols / 2;
+        extractRows = rowFrameSize * 2;
+        extractCols = colFrameSize * 2;
+        rowsSize = numImageRows + extractRows;
+        colSize = numImageCols + extractCols;
+
+        zeroFramedArray = Util::getArray(rowsSize, colSize);
+        structArray = Util::getArray(rowsSize, colSize);
+        morphArray = Util::getArray(rowsSize, colSize);
+        tempArray = Util::getArray(rowsSize, colSize);
 
         loadImage(imageFile);
         loadStruct(structFile);
@@ -121,11 +128,23 @@ public:
 
     // load image file to zeroFramedArray
     void loadImage(ifstream& imageFile){
-        Util::loadFileToArray(imageFile, zeroFramedArray, numImageRows, numImageCols);
+        int pixelVal;
+        for(int i = rowOrigin; i < rowsSize; i++){
+            for(int j = colOrigin; j < colSize; j++){
+                imageFile >> pixelVal;
+                zeroFramedArray[i][j] = pixelVal;
+            }
+        }
     }
 
     void loadStruct(ifstream& structFile){
-        Util::loadFileToArray(structFile, structArray, numStructRows, numStructCols);
+        int pixelVal;
+        for(int i = 0; i < numStructRows; i++){
+            for(int j = 0; j < numStructCols; j++){
+                structFile >> pixelVal;
+                structArray[i][j] = pixelVal;
+            }
+        }
     }
 
     int** computeDilation(int** inputImage){
