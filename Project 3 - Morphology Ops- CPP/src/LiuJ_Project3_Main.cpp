@@ -147,18 +147,24 @@ public:
         }
     }
 
-    void computeDilation(int** inputImage, int** outputArray){
+    void computeDilation(int** inputImage, int** outputImage){
         for(int i = rowFrameSize; i < rowSize - rowFrameSize; i++){
             for(int j = colFrameSize; j < colSize - colFrameSize; j++){
-                if(inputImage[i][j] == 1){
-                    onePixelDilation(i, j, inputImage, outputArray);
+                if(inputImage[i][j] > 0){
+                    onePixelDilation(i, j, inputImage, outputImage);
                 }
             }
         }
     }
 
-    int** computeErosion(int** inputImage){
-
+    void computeErosion(int** inputImage, int** outputImage){
+        for(int i = rowFrameSize; i < rowSize - rowFrameSize; i++){
+            for(int j = colFrameSize; j < colSize - colFrameSize; j++){
+                if(inputImage[i][j] > 0){
+                    onePixelErosion(i, j, inputImage, outputImage);
+                }
+            }
+        }
     }
 
     int** computeOpening(int** inputImage){
@@ -174,7 +180,7 @@ public:
             jOffset = j - colOrigin;
         for(int rIndex = 0; rIndex < numStructRows; rIndex++){
             for(int cIndex = 0; cIndex < numStructCols; cIndex++){
-                if(structArray[rIndex][cIndex] == 1){
+                if(structArray[rIndex][cIndex] > 0){
                     outputImage[iOffset + rIndex][jOffset + cIndex] = 1;
                 }
             }
@@ -182,7 +188,21 @@ public:
     }
 
     void onePixelErosion(int i , int j, int** inputImage, int** outputImage){
-
+        int iOffset = i - rowOrigin,
+            jOffset = j - colOrigin;
+        bool fitStructElement = true;
+        for(int rIndex = 0; rIndex < numStructRows; rIndex++){
+            for(int cIndex = 0; cIndex < numStructCols; cIndex++){
+                if(structArray[rIndex][cIndex] > 0 && inputImage[iOffset + rIndex][jOffset + cIndex] <= 0){
+                        fitStructElement = false;
+                }
+            }
+        }
+        if(fitStructElement){
+            outputImage[i][j] = 1;
+        }else{
+            outputImage[i][j] = 0;
+        }
     }
 
     void outputImageToFile(int** imageArray, ofstream& outFile){
@@ -213,13 +233,19 @@ int main(int argc, const char* argv[]){
 
     Morphology* morphology = new Morphology(imageFile, structFile);
 
-    outFile1<< "ZeroFramedArray\n";
+    outFile1<< "Data 1 Image \n";
     morphology->prettyPrint(morphology->zeroFramedArray, morphology->rowSize, morphology->colSize, outFile1);
     outFile1<< "\n\nStructure Element\n";
     morphology->prettyPrint(morphology->structArray, morphology->numStructRows, morphology->numStructCols, outFile1);
 
     // Step 6
     morphology->computeDilation(morphology->zeroFramedArray, morphology->morphArray);
-    outFile1<< "\n\nZero Framed Array after Dilation\n";
+    outFile1<< "\n\nData1 Image after Dilation\n";
+    morphology->prettyPrint(morphology->morphArray, morphology->rowSize, morphology->colSize,outFile1);
+
+    // Step 7
+    morphology->zero2DArray(morphology->morphArray, morphology->rowSize, morphology->colSize);
+    morphology->computeErosion(morphology->zeroFramedArray, morphology->morphArray);
+    outFile1<< "\n\nData1 Image Erosion\n";
     morphology->prettyPrint(morphology->morphArray, morphology->rowSize, morphology->colSize,outFile1);
 }
