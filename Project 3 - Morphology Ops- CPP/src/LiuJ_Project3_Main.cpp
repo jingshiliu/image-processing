@@ -147,8 +147,14 @@ public:
         }
     }
 
-    int** computeDilation(int** inputImage){
-
+    void computeDilation(int** inputImage, int** outputArray){
+        for(int i = rowFrameSize; i < rowSize - rowFrameSize; i++){
+            for(int j = colFrameSize; j < colSize - colFrameSize; j++){
+                if(inputImage[i][j] == 1){
+                    onePixelDilation(i, j, inputImage, outputArray);
+                }
+            }
+        }
     }
 
     int** computeErosion(int** inputImage){
@@ -164,7 +170,15 @@ public:
     }
 
     void onePixelDilation(int i, int j, int** inputImage, int** outputImage){
-
+        int iOffset = i - rowOrigin,
+            jOffset = j - colOrigin;
+        for(int rIndex = 0; rIndex < numStructRows; rIndex++){
+            for(int cIndex = 0; cIndex < numStructCols; cIndex++){
+                if(structArray[rIndex][cIndex] == 1){
+                    outputImage[iOffset + rIndex][jOffset + cIndex] = 1;
+                }
+            }
+        }
     }
 
     void onePixelErosion(int i , int j, int** inputImage, int** outputImage){
@@ -203,4 +217,9 @@ int main(int argc, const char* argv[]){
     morphology->prettyPrint(morphology->zeroFramedArray, morphology->rowSize, morphology->colSize, outFile1);
     outFile1<< "\n\nStructure Element\n";
     morphology->prettyPrint(morphology->structArray, morphology->numStructRows, morphology->numStructCols, outFile1);
+
+    // Step 6
+    morphology->computeDilation(morphology->zeroFramedArray, morphology->morphArray);
+    outFile1<< "\n\nZero Framed Array after Dilation\n";
+    morphology->prettyPrint(morphology->morphArray, morphology->rowSize, morphology->colSize,outFile1);
 }
