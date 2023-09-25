@@ -42,6 +42,24 @@ namespace Util{
         }
         cout<<endl<<endl;
     }
+
+    static void loadFileToArray(ifstream& inFile, int** array, int rows, int cols){
+        int pixelVal;
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
+                inFile >> pixelVal;
+                array[i][j] = pixelVal;
+            }
+        }
+    }
+
+    static void loadFileToArray(ifstream& inFile, int* array, int length){
+        int pixelVal;
+        for(int i = 0; i < length; i++){
+            inFile >> pixelVal;
+            array[i] = pixelVal;
+        }
+    }
 }
 
 class Morphology{
@@ -81,28 +99,20 @@ public:
     }
 
     void zero2DArray(int** array, int rows, int cols){
-
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
+                array[i][j] = 0;
+            }
+        }
     }
 
     // load image file to zeroFramedArray
     void loadImage(ifstream& imageFile){
-        int pixelVal;
-        for(int i = 0; i < numImageRows; i++){
-            for(int j = 0; j < numImageCols; j++){
-                imageFile >> pixelVal;
-                zeroFramedArray[i][j] = pixelVal;
-            }
-        }
+        Util::loadFileToArray(imageFile, zeroFramedArray, numImageRows, numImageCols);
     }
 
     void loadStruct(ifstream& structFile){
-        int pixelVal;
-        for(int i = 0; i < numStructRows; i++){
-            for(int j = 0; j < numStructCols; j++){
-                structFile >> pixelVal;
-                structArray[i][j] = pixelVal;
-            }
-        }
+        Util::loadFileToArray(structFile, structArray, numStructRows, numStructCols);
     }
 
     int** computeDilation(int** inputImage){
