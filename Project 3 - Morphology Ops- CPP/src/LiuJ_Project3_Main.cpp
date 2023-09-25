@@ -167,12 +167,14 @@ public:
         }
     }
 
-    int** computeOpening(int** inputImage){
-
+    void computeOpening(int** inputImage, int** outputImage, int** tempImage){
+        computeErosion(inputImage, tempImage);
+        computeDilation(tempImage, morphArray);
     }
 
-    int** computeClosing(int** inputImage){
-
+    int** computeClosing(int** inputImage, int** outputImage, int** tempImage){
+        computeDilation(inputImage, tempImage);
+        computeErosion(tempImage, morphArray);
     }
 
     void onePixelDilation(int i, int j, int** inputImage, int** outputImage){
@@ -247,5 +249,18 @@ int main(int argc, const char* argv[]){
     morphology->zero2DArray(morphology->morphArray, morphology->rowSize, morphology->colSize);
     morphology->computeErosion(morphology->zeroFramedArray, morphology->morphArray);
     outFile1<< "\n\nData1 Image Erosion\n";
+    morphology->prettyPrint(morphology->morphArray, morphology->rowSize, morphology->colSize,outFile1);
+
+    // Step 8
+    morphology->zero2DArray(morphology->morphArray, morphology->rowSize, morphology->colSize);
+    morphology->computeOpening(morphology->zeroFramedArray, morphology->morphArray, morphology->tempArray);
+    outFile1<< "\n\nData1 Image Opening\n";
+    morphology->prettyPrint(morphology->morphArray, morphology->rowSize, morphology->colSize,outFile1);
+
+    // Step 9
+    morphology->zero2DArray(morphology->morphArray, morphology->rowSize, morphology->colSize);
+    morphology->zero2DArray(morphology->tempArray, morphology->rowSize, morphology->colSize);
+    morphology->computeClosing(morphology->zeroFramedArray, morphology->morphArray, morphology->tempArray);
+    outFile1<< "\n\nData1 Image Closing\n";
     morphology->prettyPrint(morphology->morphArray, morphology->rowSize, morphology->colSize,outFile1);
 }
