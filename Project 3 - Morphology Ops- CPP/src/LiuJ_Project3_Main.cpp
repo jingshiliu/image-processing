@@ -110,7 +110,7 @@ public:
         colSize = numImageCols + extractCols;
 
         zeroFramedArray = Util::getArray(rowSize, colSize);
-        structArray = Util::getArray(rowSize, colSize);
+        structArray = Util::getArray(numStructRows, numStructCols);
         morphArray = Util::getArray(rowSize, colSize);
         tempArray = Util::getArray(rowSize, colSize);
 
@@ -129,8 +129,8 @@ public:
     // load image file to zeroFramedArray
     void loadImage(ifstream& imageFile){
         int pixelVal;
-        for(int i = rowOrigin; i < rowSize; i++){
-            for(int j = colOrigin; j < colSize; j++){
+        for(int i = rowOrigin; i < rowSize - rowFrameSize; i++){
+            for(int j = colOrigin; j < colSize - colFrameSize; j++){
                 imageFile >> pixelVal;
                 zeroFramedArray[i][j] = pixelVal;
             }
