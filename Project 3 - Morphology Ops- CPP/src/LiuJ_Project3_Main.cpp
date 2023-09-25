@@ -91,7 +91,7 @@ public:
         colFrameSize, // numStructCols / 2
         extractRows, // rowFrameSize * 2
         extractCols, // colFrameSize * 2
-        rowsSize, // numImageRows + extraRows
+        rowSize, // numImageRows + extraRows
         colSize; // numImageCols + extraCols
     int** zeroFramedArray;
     int** morphArray;
@@ -106,13 +106,13 @@ public:
         colFrameSize = numStructCols / 2;
         extractRows = rowFrameSize * 2;
         extractCols = colFrameSize * 2;
-        rowsSize = numImageRows + extractRows;
+        rowSize = numImageRows + extractRows;
         colSize = numImageCols + extractCols;
 
-        zeroFramedArray = Util::getArray(rowsSize, colSize);
-        structArray = Util::getArray(rowsSize, colSize);
-        morphArray = Util::getArray(rowsSize, colSize);
-        tempArray = Util::getArray(rowsSize, colSize);
+        zeroFramedArray = Util::getArray(rowSize, colSize);
+        structArray = Util::getArray(rowSize, colSize);
+        morphArray = Util::getArray(rowSize, colSize);
+        tempArray = Util::getArray(rowSize, colSize);
 
         loadImage(imageFile);
         loadStruct(structFile);
@@ -129,7 +129,7 @@ public:
     // load image file to zeroFramedArray
     void loadImage(ifstream& imageFile){
         int pixelVal;
-        for(int i = rowOrigin; i < rowsSize; i++){
+        for(int i = rowOrigin; i < rowSize; i++){
             for(int j = colOrigin; j < colSize; j++){
                 imageFile >> pixelVal;
                 zeroFramedArray[i][j] = pixelVal;
@@ -200,7 +200,7 @@ int main(int argc, const char* argv[]){
     Morphology* morphology = new Morphology(imageFile, structFile);
 
     outFile1<< "ZeroFramedArray\n";
-    morphology->prettyPrint(morphology->zeroFramedArray, morphology->numImageRows, morphology->numImageCols, outFile1);
+    morphology->prettyPrint(morphology->zeroFramedArray, morphology->rowSize, morphology->colSize, outFile1);
     outFile1<< "\n\nStructure Element\n";
     morphology->prettyPrint(morphology->structArray, morphology->numStructRows, morphology->numStructCols, outFile1);
 }
