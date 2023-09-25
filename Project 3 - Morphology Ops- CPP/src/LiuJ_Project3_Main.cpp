@@ -43,6 +43,19 @@ namespace Util{
         cout<<endl<<endl;
     }
 
+    static void prettyPrint(int** array, int rows, int cols){
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
+                if(array[i][j] == 0){
+                    cout<< ". ";
+                }else{
+                    cout <<"1 ";
+                }
+            }
+            cout << "\n";
+        }
+    }
+
     static void loadFileToArray(ifstream& inFile, int** array, int rows, int cols){
         int pixelVal;
         for(int i = 0; i < rows; i++){
@@ -143,8 +156,17 @@ public:
 
     }
 
-    void prettyPrint(int** imageArray, ofstream& outFile){
-
+    void prettyPrint(int** imageArray, int rows, int cols, ofstream& outFile){
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
+                if(imageArray[i][j] == 0){
+                    outFile << ". ";
+                }else{
+                    outFile <<"1 ";
+                }
+            }
+            outFile << "\n";
+        }
     }
 };
 
@@ -158,4 +180,8 @@ int main(int argc, const char* argv[]){
 
     Morphology* morphology = new Morphology(imageFile, structFile);
 
+    outFile1<< "ZeroFramedArray\n";
+    morphology->prettyPrint(morphology->zeroFramedArray, morphology->numImageRows, morphology->numImageCols, outFile1);
+    outFile1<< "\n\nStructure Element\n";
+    morphology->prettyPrint(morphology->structArray, morphology->numStructRows, morphology->numStructCols, outFile1);
 }
