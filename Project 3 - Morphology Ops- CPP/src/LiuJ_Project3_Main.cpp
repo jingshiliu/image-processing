@@ -55,13 +55,22 @@ public:
         extractCols, // colFrameSize * 2
         rowsSize, // numImageRows + extraRows
         colSize; // numImageCols + extraCols
-    int** zeroFramedArray,
-          morphArray,
-          tempArray,
-          structArray;
+    int** zeroFramedArray;
+    int** morphArray;
+    int** tempArray;
+    int** structArray;
 
-    Morphology(){
+    Morphology(ifstream& imageFile, ifstream& structFile){
+        imageFile >> numImageRows >> numImageCols >> imageMin >> imageMax;
+        structFile >> numStructRows >> numStructCols >> structMin >> structMax >> rowOrigin >> colOrigin;
 
+        zeroFramedArray = Util::getArray(numImageRows, numImageCols);
+        structArray = Util::getArray(numStructRows, numStructCols);
+        morphArray = Util::getArray(numImageRows, numImageCols);
+        tempArray = Util::getArray(numImageRows, numImageCols);
+
+        loadImage(imageFile);
+        loadStruct(structFile);
     }
 
     void zero2DArray(int** array, int rows, int cols){
@@ -70,11 +79,23 @@ public:
 
     // load image file to zeroFramedArray
     void loadImage(ifstream& imageFile){
-
+        int pixelVal;
+        for(int i = 0; i < numImageRows; i++){
+            for(int j = 0; j < numImageCols; j++){
+                imageFile >> pixelVal;
+                zeroFramedArray[i][j] = pixelVal;
+            }
+        }
     }
 
     void loadStruct(ifstream& structFile){
-
+        int pixelVal;
+        for(int i = 0; i < numStructRows; i++){
+            for(int j = 0; j < numStructCols; j++){
+                structFile >> pixelVal;
+                structArray[i][j] = pixelVal;
+            }
+        }
     }
 
     int** computeDilation(int** inputImage){
@@ -118,5 +139,6 @@ int main(int argc, const char* argv[]){
     ofstream outFile1(argv[5]),
              outFile2(argv[6]);
 
+    Morphology* morphology = new Morphology(imageFile, structFile);
 
 }
