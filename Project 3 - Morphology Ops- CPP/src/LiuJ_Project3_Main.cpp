@@ -223,13 +223,22 @@ public:
             outFile << "\n";
         }
     }
+
+    void objectExtraction(){
+        zero2DArray(tempArray, rowSize, colSize);
+        computeOpening(zeroFramedArray, morphArray, tempArray);
+    }
+
+    void fillHoles(){
+
+    }
 };
 
 int main(int argc, const char* argv[]){
     ifstream imageFile(argv[1]),
              structFile(argv[2]),
-             task1ImageFile(argv[3]),
-             task2ImageFile(argv[4]);
+             taskImageFile(argv[3]),
+             structImageFile(argv[4]);
     ofstream outFile1(argv[5]),
              outFile2(argv[6]);
 
@@ -263,4 +272,24 @@ int main(int argc, const char* argv[]){
     morphology->computeClosing(morphology->zeroFramedArray, morphology->morphArray, morphology->tempArray);
     outFile1<< "\n\nData1 Image Closing\n";
     morphology->prettyPrint(morphology->morphArray, morphology->rowSize, morphology->colSize,outFile1);
+
+    // Step 10 - Task 1: extract large blobs and fill holes in the blobs
+    Morphology* taskMorphology = new Morphology(taskImageFile, structImageFile);
+    outFile2<< "Image 1\n";
+    taskMorphology->prettyPrint(taskMorphology->zeroFramedArray, taskMorphology->rowSize, taskMorphology->colSize, outFile2);
+
+    // Structuring Element
+    outFile2<< "\n\n\nStructure Element for objectExtraction()\n";
+    taskMorphology->prettyPrint(taskMorphology->structArray, taskMorphology->numStructRows, taskMorphology->numStructCols, outFile2);
+
+    // objectExtraction
+    taskMorphology->objectExtraction();
+    outFile2<< "\n\nObject Extraction\nOperation: Opening\nImage 1 after objectExtraction().\n";
+    taskMorphology->prettyPrint(taskMorphology->morphArray, taskMorphology->rowSize, taskMorphology->colSize ,outFile2);
+
+    // fillHoles
+    taskMorphology->fillHoles();
+    outFile2<< "\n\nFill Holes\nOperation: Closing\nImage after objectExtraction() and fillHoles()\n";
+    taskMorphology->prettyPrint(taskMorphology->morphArray, taskMorphology->rowSize, taskMorphology->colSize ,outFile2);
+
 }
