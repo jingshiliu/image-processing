@@ -241,7 +241,7 @@ public:
 
     void fillHoles(){
         zero2DArray(tempArray, rowSize, colSize);
-        computeClosing(morphArray, morphArray, tempArray);
+        computeClosing(Util::copyArray(morphArray, rowSize, colSize), morphArray, tempArray);
     }
 };
 
