@@ -158,8 +158,8 @@ public:
     }
 
     void computeDilation(int** inputImage, int** outputImage){
-        for(int i = rowFrameSize; i < rowSize - rowFrameSize; i++){
-            for(int j = colFrameSize; j < colSize - colFrameSize; j++){
+        for(int i = rowOrigin; i < rowSize - rowFrameSize; i++){
+            for(int j = colOrigin; j < colSize - colFrameSize; j++){
                 if(inputImage[i][j] > 0){
                     onePixelDilation(i, j, inputImage, outputImage);
                 }
@@ -168,8 +168,8 @@ public:
     }
 
     void computeErosion(int** inputImage, int** outputImage){
-        for(int i = rowFrameSize; i < rowSize - rowFrameSize; i++){
-            for(int j = colFrameSize; j < colSize - colFrameSize; j++){
+        for(int i = rowOrigin; i < rowSize - rowFrameSize; i++){
+            for(int j = colOrigin; j < colSize - colFrameSize; j++){
                 if(inputImage[i][j] > 0){
                     onePixelErosion(i, j, inputImage, outputImage);
                 }
@@ -240,8 +240,8 @@ public:
     }
 
     void fillHoles(){
-//        zero2DArray(tempArray, rowSize, colSize);
-//        computeClosing(morphArray, morphArray, tempArray);
+        zero2DArray(tempArray, rowSize, colSize);
+        computeClosing(morphArray, morphArray, tempArray);
     }
 };
 
