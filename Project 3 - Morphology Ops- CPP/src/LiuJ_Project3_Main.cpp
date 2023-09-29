@@ -73,6 +73,16 @@ namespace Util{
             array[i] = pixelVal;
         }
     }
+
+    static int** copyArray(int** array, int rows, int cols){
+        int** output = getArray(rows, cols);
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
+                output[i][j] = array[i][j];
+            }
+        }
+        return output;
+    }
 }
 
 class Morphology{
@@ -230,7 +240,8 @@ public:
     }
 
     void fillHoles(){
-
+//        zero2DArray(tempArray, rowSize, colSize);
+//        computeClosing(morphArray, morphArray, tempArray);
     }
 };
 
