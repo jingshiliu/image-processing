@@ -178,14 +178,16 @@ public:
         }
     }
 
-    void objectExtraction(){
+    void objectExtraction(int** inputImage, int** outputImage){
         zero2DArray(tempArray, rowSize, colSize);
-        computeOpening(zeroFramedArray, morphArray, tempArray);
+        zero2DArray(outputImage, rowSize, colSize);
+        computeOpening(inputImage, outputImage, tempArray);
     }
 
-    void fillHoles(){
+    void fillHoles(int** inputImage, int** outputImage){
         zero2DArray(tempArray, rowSize, colSize);
-        computeClosing(Util::copyArray(morphArray, rowSize, colSize), morphArray, tempArray);
+        zero2DArray(outputImage, rowSize, colSize);
+        computeClosing(inputImage, outputImage, tempArray);
     }
 };
 
@@ -238,12 +240,13 @@ int main(int argc, const char* argv[]){
     taskMorphology->prettyPrint(taskMorphology->structArray, taskMorphology->numStructRows, taskMorphology->numStructCols, outFile2);
 
     // objectExtraction
-    taskMorphology->objectExtraction();
+    taskMorphology->objectExtraction(taskMorphology->zeroFramedArray, taskMorphology->morphArray);
     outFile2<< "\n\nObject Extraction\nOperation: Opening\nImage 1 after objectExtraction().\n";
     taskMorphology->prettyPrint(taskMorphology->morphArray, taskMorphology->rowSize, taskMorphology->colSize ,outFile2);
 
     // fillHoles
-    taskMorphology->fillHoles();
+    taskMorphology->fillHoles(Util::copyArray(taskMorphology->morphArray, taskMorphology->rowSize, taskMorphology->colSize),
+                              taskMorphology->morphArray);
     outFile2<< "\n\nFill Holes\nOperation: Closing\nImage after objectExtraction() and fillHoles()\n";
     taskMorphology->prettyPrint(taskMorphology->morphArray, taskMorphology->rowSize, taskMorphology->colSize ,outFile2);
 
