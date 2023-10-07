@@ -1,6 +1,7 @@
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 class Property{
@@ -26,20 +27,34 @@ class ConnectedComponentLabel{
     char option;
     Property[] connectedComponentProperty;
 
-    ConnectedComponentLabel(){
+    ConnectedComponentLabel(Scanner inFile){
+        numRows = inFile.nextInt();
+        numCols = inFile.nextInt();
+        minVal = inFile.nextInt();
+        maxVal = inFile.nextInt();
 
+        zeroFramedArray = new int[numRows + 2][numCols + 2];
+        newLabel = 0;
+
+        loadImage(inFile);
     }
 
-    void zero2D(){
-
+    void zero2D(int[][] array){
+        for (int[] ints : array) {
+            Arrays.fill(ints, 0);
+        }
     }
 
     void negative1D(){
 
     }
 
-    void loadImage(){
-
+    void loadImage(Scanner inFile){
+        for (int i = 1; i < numRows + 1; i++) {
+            for (int j = 1; j < numCols + 1; j++) {
+                zeroFramedArray[i][j] = inFile.nextInt();
+            }
+        }
     }
 
     void imageReformat(){
@@ -110,7 +125,7 @@ public class LiuJ_Project4_Main {
             System.out.println(exception);
         }
 
-
+        ConnectedComponentLabel connectedComponentLabel = new ConnectedComponentLabel(inFile);
 
     }
 }
