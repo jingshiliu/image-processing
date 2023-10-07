@@ -1,7 +1,9 @@
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.Scanner;
 
 class Property{
@@ -57,8 +59,104 @@ class ConnectedComponentLabel{
         }
     }
 
-    void imageReformat(){
+    void imageReformat(FileWriter outFile) throws IOException {
+        outFile.write(numRows + " " + numCols + " " + minVal + " " + maxVal + "\n");
 
+        int curWidth, pixelWidth = Integer.toString(maxVal).length();
+
+        for(int r = 1; r < numRows + 1; r++){
+            for(int c = 1; c < numCols + 1; c++){
+                outFile.write(zeroFramedArray[r][c]);
+                curWidth = Integer.toString(zeroFramedArray[r][c]).length();
+                while(curWidth < pixelWidth){
+                    outFile.write(" ");
+                    curWidth++;
+                }
+            }
+            outFile.write('\n');
+        }
+    }
+
+    void connected4(FileWriter reformatPrettyPrintFile, FileWriter debugFile) throws IOException {
+        debugFile.write("Entering connect4 method\n");
+
+        // 1
+        connect4Pass1();
+        debugFile.write("After connected4 pass1, newLabel = " + newLabel + "\n");
+        reformatPrettyPrintFile.write("After connected4 pass1, zeroFramedArray");
+        imageReformat(reformatPrettyPrintFile);
+        reformatPrettyPrintFile.write("After connected4 pass1, equalArray");
+        printEqualArray(reformatPrettyPrintFile);
+
+        // 2
+        connect4Pass2();
+        debugFile.write("After connected4 pass2, newLabel = " + newLabel);
+        reformatPrettyPrintFile.write("After connected4 pass2");
+        reformatPrettyPrintFile.write("After connected4 pass2, zeroFramedArray");
+        imageReformat(reformatPrettyPrintFile);
+        reformatPrettyPrintFile.write("After connected4 pass2, equalArray");
+        printEqualArray(reformatPrettyPrintFile);
+
+        // 3
+        trueNumConnectedComponent = manageEqualArray();
+        reformatPrettyPrintFile.write("After connected4 manageEqualArray(), equalArray");
+        printEqualArray(reformatPrettyPrintFile);
+        newMin = 0;
+        newMax = trueNumConnectedComponent;
+        connectedComponentProperty = new Property[newMax + 1];
+        debugFile.write("In connected4, after manageEqualArray, trueNumConnectedComponent = "
+                            + trueNumConnectedComponent + "\n");
+
+        // 4
+        connectPass3(debugFile);
+
+        reformatPrettyPrintFile.write("After connected4 pass3, zeroFramedArray");
+        imageReformat(reformatPrettyPrintFile);
+        reformatPrettyPrintFile.write("After connected4 pass3, equalArray");
+        printEqualArray(reformatPrettyPrintFile);
+
+        debugFile.write("Leaving connected4 method");
+    }
+
+    void connected8(FileWriter reformatPrettyPrintFile, FileWriter debugFile) throws IOException {
+        debugFile.write("Entering connect8 method\n");
+
+        // 1
+        connect8Pass1();
+        debugFile.write("After connected8 pass1, newLabel = " + newLabel + "\n");
+        reformatPrettyPrintFile.write("After connected8 pass1, zeroFramedArray");
+        imageReformat(reformatPrettyPrintFile);
+        reformatPrettyPrintFile.write("After connected8 pass1, equalArray");
+        printEqualArray(reformatPrettyPrintFile);
+
+        // 2
+        connect8Pass2();
+        debugFile.write("After connected8 pass2, newLabel = " + newLabel);
+        reformatPrettyPrintFile.write("After connected8 pass2");
+        reformatPrettyPrintFile.write("After connected8 pass2, zeroFramedArray");
+        imageReformat(reformatPrettyPrintFile);
+        reformatPrettyPrintFile.write("After connected8 pass2, equalArray");
+        printEqualArray(reformatPrettyPrintFile);
+
+        // 3
+        trueNumConnectedComponent = manageEqualArray();
+        reformatPrettyPrintFile.write("After connected8 manageEqualArray(), equalArray");
+        printEqualArray(reformatPrettyPrintFile);
+        newMin = 0;
+        newMax = trueNumConnectedComponent;
+        connectedComponentProperty = new Property[newMax + 1];
+        debugFile.write("In connected8, after manageEqualArray, trueNumConnectedComponent = "
+                + trueNumConnectedComponent + "\n");
+
+        // 4
+        connectPass3(debugFile);
+
+        reformatPrettyPrintFile.write("After connected8 pass3, zeroFramedArray");
+        imageReformat(reformatPrettyPrintFile);
+        reformatPrettyPrintFile.write("After connected8 pass3, equalArray");
+        printEqualArray(reformatPrettyPrintFile);
+
+        debugFile.write("Leaving connected8 method");
     }
 
     void connect8Pass1(){
@@ -122,10 +220,27 @@ public class LiuJ_Project4_Main {
             debugFile = new FileWriter(args[5]);
 
         }catch (IOException exception){
-            System.out.println(exception);
+            System.out.println("Invalid input");
+            return;
         }
 
         ConnectedComponentLabel connectedComponentLabel = new ConnectedComponentLabel(inFile);
+
+        switch (connectness){
+            case "4":
+                connectedComponentLabel.connected4(reformatPrettyPrintFile, debugFile);
+                break;
+
+            case "8":
+                connectedComponentLabel.connected8(reformatPrettyPrintFile, debugFile);
+                break;
+
+            default:
+                System.out.println("Invalid connectness input. Should be either '4' or '8'");
+                return;
+        }
+
+
 
     }
 }
