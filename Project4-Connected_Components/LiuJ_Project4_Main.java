@@ -10,6 +10,7 @@ class Property{
     int label,
         numPixels,
         minR,
+        minC,
         maxR,
         maxC;
 }
@@ -35,6 +36,7 @@ class ConnectedComponentLabel{
         minVal = inFile.nextInt();
         maxVal = inFile.nextInt();
 
+        equalArray = new int[(numRows * numCols)/4];
         zeroFramedArray = new int[numRows + 2][numCols + 2];
         newLabel = 0;
 
@@ -160,7 +162,46 @@ class ConnectedComponentLabel{
     }
 
     void connect8Pass1(){
+        // zeroFramedArray, newLabel, equalArray
+        int[] neighbors;
+        int minLabel = 0;
+        for (int i = 1; i < numRows + 1; i++) {
+            for (int j = 1; j < numCols + 1; j++) {
+                if (zeroFramedArray[i][j] == 0)
+                    continue;
+                neighbors = new int[]{
+                        zeroFramedArray[i-1][j-1],
+                        zeroFramedArray[i-1][j],
+                        zeroFramedArray[i-1][j+1],
+                        zeroFramedArray[i][j-1]
+                };
+                if(neighbors[0] == 0 && neighbors[1] == 0 && neighbors[2] == 0 && neighbors[3] == 0){
+                    zeroFramedArray[i][j] = ++newLabel;
+                }
+                else if(neighbors[0] == neighbors[1] && neighbors[0] == neighbors[2] && neighbors[0] == neighbors[3]){
+                    zeroFramedArray[i][j] = neighbors[0];
+                }
+                else{
+                    // find minLabel
+                    Arrays.sort(neighbors);
+                    for(int label: neighbors){
+                        if(label != 0){
+                            minLabel = label;
+                            break;
+                        }
+                    }
+                    zeroFramedArray[i][j] = minLabel;
 
+                    // update equalArray
+                    for(int label: neighbors){
+                        if(label != 0){
+                            equalArray[label] = minLabel;
+                        }
+                    }
+                }
+
+            }
+        }
     }
 
     void connect8Pass2(){
