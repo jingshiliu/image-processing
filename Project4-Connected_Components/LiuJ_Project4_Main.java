@@ -13,6 +13,14 @@ class Property{
         minC,
         maxR,
         maxC;
+    Property(int label, int numPixels, int minR, int minC, int maxR, int maxC){
+        this.label = label;
+        this.numPixels = numPixels;
+        this.minR = minR;
+        this.minC = minC;
+        this.maxR = maxR;
+        this.maxC = maxC;
+    }
 }
 
 class ConnectedComponentLabel{
