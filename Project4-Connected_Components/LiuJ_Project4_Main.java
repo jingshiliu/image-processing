@@ -353,7 +353,14 @@ class ConnectedComponentLabel{
     }
 
     int manageEqualArray(){
-        return 0;
+        int readLabel = 1;
+        for (int i = 1; i <= newLabel; i++) {
+            if(i == equalArray[i])
+                equalArray[i] = readLabel++;
+            else
+                equalArray[i] = equalArray[equalArray[i]];
+        }
+        return readLabel;
     }
 
     void printConnectedComponentProperty(){
