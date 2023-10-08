@@ -238,11 +238,71 @@ class ConnectedComponentLabel{
     }
 
     void connect4Pass1(){
+        // zeroFramedArray, newLabel, equalArray
+        int[] neighbors;
+        int minLabel = 0;
+        for (int i = 1; i < numRows + 1; i++) {
+            for (int j = 1; j < numCols + 1; j++) {
+                if (zeroFramedArray[i][j] == 0)
+                    continue;
+                neighbors = new int[]{
+                        zeroFramedArray[i-1][j],
+                        zeroFramedArray[i][j-1]
+                };
+                if(neighbors[0] == 0 && neighbors[1] == 0){
+                    zeroFramedArray[i][j] = ++newLabel;
+                }
+                else if(neighbors[0] == neighbors[1]){
+                    zeroFramedArray[i][j] = neighbors[0];
+                }
+                else{
+                    // find minLabel
+                    Arrays.sort(neighbors);
+                    minLabel = neighbors[0];
+                    if(neighbors[0] == 0){
+                        minLabel = neighbors[1];
+                    }
+                    zeroFramedArray[i][j] = minLabel;
 
+                    // update equalArray
+                    for(int label: neighbors){
+                        if(label != 0){
+                            equalArray[label] = minLabel;
+                        }
+                    }
+                }
+
+            }
+        }
     }
 
     void connect4Pass2(){
+        // zeroFramedArray, equalArray
+        int[] neighbors;
+        int minLabel = 0;
+        for (int i = numRows; i > 0 ; i--) {
+            for (int j = numCols; j > 0 ; j--) {
+                if(zeroFramedArray[i][j] == 0)
+                    continue;
+                neighbors = new int[]{
+                        zeroFramedArray[i][j+1],
+                        zeroFramedArray[i+1][j]
+                };
 
+                // do nothing if neighbors are 0 or have same label,
+                // but we only have to check if they have same label bc the latter includes the former
+                if(!(neighbors[0] == neighbors[1])){
+                    Arrays.sort(neighbors);
+                    minLabel = neighbors[0];
+                    if(neighbors[0] == 0){
+                        minLabel = neighbors[1];
+                    }
+
+                    equalArray[zeroFramedArray[i][j]] = minLabel;
+                    zeroFramedArray[i][j] = minLabel;
+                }
+            }
+        }
     }
 
     void connectPass3(){
