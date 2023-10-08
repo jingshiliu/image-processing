@@ -313,8 +313,39 @@ class ConnectedComponentLabel{
         }
     }
 
-    void connectPass3(){
-
+    void connectPass3(FileWriter debugFile) throws IOException {
+        debugFile.write("Entering connectPass3()\n");
+        for (int i = 1; i < connectedComponentProperty.length; i++) {
+            connectedComponentProperty[i] = new Property(
+                    i,
+                    0,
+                    numRows,
+                    numCols,
+                    0,
+                    0
+            );
+        }
+        Property property;
+        for (int i = 1; i <= numRows; i++) {
+            for (int j = 1; j <= numCols; j++) {
+                if (zeroFramedArray[i][j] == 0)
+                    continue;
+                // relabelling
+                zeroFramedArray[i][j] = equalArray[zeroFramedArray[i][j]];
+                // property at index i associate with group i
+                property = connectedComponentProperty[zeroFramedArray[i][j]];
+                property.numPixels++;
+                if(i < property.minR)
+                    property.minR = i;
+                if(i > property.maxR)
+                    property.maxR = i;
+                if(j < property.minC)
+                    property.minC = j;
+                if(i > property.maxC)
+                    property.maxC = j;
+            }
+        }
+        debugFile.write("Leaving connectedPass3()\n");
     }
 
     void updateEqualArray(){
@@ -345,7 +376,7 @@ class ConnectedComponentLabel{
 }
 
 public class LiuJ_Project4_Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner inFile;
         String connectness = args[1];
         FileWriter reformatPrettyPrintFile, labelFile, propertyFile, debugFile;
