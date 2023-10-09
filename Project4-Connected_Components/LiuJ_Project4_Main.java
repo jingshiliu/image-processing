@@ -379,8 +379,21 @@ class ConnectedComponentLabel{
         }
     }
 
-    void drawBoxes(){
-
+    void drawBoxes(FileWriter debugFile) throws IOException{
+        debugFile.write("Entering drawBoxes()\n");
+        int label;
+        for (int i = 1; i <= trueNumConnectedComponent; i++) {
+            label = connectedComponentProperty[i].label;
+            for (int r = connectedComponentProperty[i].minR; r <= connectedComponentProperty[i].maxR; r++) {
+                zeroFramedArray[r][connectedComponentProperty[i].minC] = label;
+                zeroFramedArray[r][connectedComponentProperty[i].maxC] = label;
+            }
+            for (int c = connectedComponentProperty[i].minC; c <= connectedComponentProperty[i].maxC; c++) {
+                zeroFramedArray[connectedComponentProperty[i].minR][c] = label;
+                zeroFramedArray[connectedComponentProperty[i].maxR][c] = label;
+            }
+        }
+        debugFile.write("Leaving drawBoxes()\n");
     }
 
     void printImage(FileWriter outFile) throws IOException{
