@@ -57,8 +57,8 @@ class ConnectedComponentLabel{
         }
     }
 
-    void negative1D(){
-
+    void negative1D(int[] array){
+        Arrays.fill(array, -1);
     }
 
     void loadImage(Scanner inFile){
