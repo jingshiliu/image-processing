@@ -449,6 +449,17 @@ public class LiuJ_Project4_Main {
                 return;
         }
 
+        connectedComponentLabel.printImage(labelFile);
+        connectedComponentLabel.printConnectedComponentProperty(propertyFile);
+        connectedComponentLabel.drawBoxes(debugFile);
+        connectedComponentLabel.imageReformat(reformatPrettyPrintFile);
+        reformatPrettyPrintFile.write("True Number of Connected Component: "
+                                        + connectedComponentLabel.trueNumConnectedComponent + '\n');
 
+        inFile.close();
+        reformatPrettyPrintFile.close();
+        labelFile.close();
+        propertyFile.close();
+        debugFile.close();
     }
 }
