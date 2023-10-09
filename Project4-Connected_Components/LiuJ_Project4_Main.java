@@ -363,19 +363,34 @@ class ConnectedComponentLabel{
         return readLabel;
     }
 
-    void printConnectedComponentProperty(){
-
+    void printConnectedComponentProperty(FileWriter outFile) throws IOException{
+        outFile.write(numRows + " " + numCols + " " + newMin + " " + newMax + "\n");
+        outFile.write(trueNumConnectedComponent + "\n");
+        for (int i = 1; i <= trueNumConnectedComponent; i++) {
+            outFile.write(connectedComponentProperty[i].label + "\n" + connectedComponentProperty[i].numPixels + "\n"
+                            + connectedComponentProperty[i].minR + " " + connectedComponentProperty[i].minC + "\n"
+                            + connectedComponentProperty[i].maxR + " " + connectedComponentProperty[i].maxC + "\n");
+        }
     }
 
-    void printEqualArray(){
-
+    void printEqualArray(FileWriter outFile) throws IOException{
+        for (int i = 1; i <= newLabel; i++) {
+            outFile.write(i + " " + equalArray[i] + "\n");
+        }
     }
 
     void drawBoxes(){
 
     }
 
-    void printImage(){
+    void printImage(FileWriter outFile) throws IOException{
+        outFile.write(numRows + " " + numCols + " " + newMin + " " + newMax + "\n");
+        for (int i = 1; i < numRows + 1; i++) {
+            for (int j = 1; j < numCols + 1; j++) {
+                outFile.write(zeroFramedArray[i][j] + " ");
+            }
+            outFile.write("\n");
+        }
 
     }
 
