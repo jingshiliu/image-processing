@@ -76,8 +76,13 @@ class ConnectedComponentLabel{
 
         for(int r = 1; r < numRows + 1; r++){
             for(int c = 1; c < numCols + 1; c++){
-                outFile.write(zeroFramedArray[r][c]);
+                if (zeroFramedArray[r][c] == 0)
+                    outFile.write(".");
+                else
+                    outFile.write(zeroFramedArray[r][c]);
+
                 curWidth = Integer.toString(zeroFramedArray[r][c]).length();
+                outFile.write(" ");
                 while(curWidth < pixelWidth){
                     outFile.write(" ");
                     curWidth++;
@@ -443,7 +448,6 @@ public class LiuJ_Project4_Main {
                 System.out.println("Invalid connectness input. Should be either '4' or '8'");
                 return;
         }
-
 
 
     }
