@@ -71,10 +71,21 @@ class ConnectedComponentLabel{
         }
     }
 
+    int findMax(int[][] array){
+        int max = array[0][0];
+        for (int[] ints : array) {
+            for (int anInt : ints) {
+                if (anInt > max)
+                    max = anInt;
+            }
+        }
+        return max;
+    }
+
     void imageReformat(FileWriter outFile) throws IOException {
         outFile.write(numRows + " " + numCols + " " + minVal + " " + maxVal + "\n");
 
-        int curWidth, pixelWidth = Integer.toString(maxVal).length();
+        int curWidth, pixelWidth = Integer.toString(findMax(zeroFramedArray)).length();
 
         for(int r = 1; r < numRows + 1; r++){
             for(int c = 1; c < numCols + 1; c++){
@@ -333,23 +344,23 @@ class ConnectedComponentLabel{
             );
         }
         Property property;
-        for (int i = 1; i <= numRows; i++) {
-            for (int j = 1; j <= numCols; j++) {
-                if (zeroFramedArray[i][j] == 0)
+        for (int r = 1; r <= numRows; r++) {
+            for (int c = 1; c <= numCols; c++) {
+                if (zeroFramedArray[r][c] == 0)
                     continue;
                 // relabelling
-                zeroFramedArray[i][j] = equalArray[zeroFramedArray[i][j]];
+                zeroFramedArray[r][c] = equalArray[zeroFramedArray[r][c]];
                 // property at index i associate with group i
-                property = connectedComponentProperty[zeroFramedArray[i][j]];
+                property = connectedComponentProperty[zeroFramedArray[r][c]];
                 property.numPixels++;
-                if(i < property.minR)
-                    property.minR = i;
-                if(i > property.maxR)
-                    property.maxR = i;
-                if(j < property.minC)
-                    property.minC = j;
-                if(i > property.maxC)
-                    property.maxC = j;
+                if(r < property.minR)
+                    property.minR = r;
+                if(r > property.maxR)
+                    property.maxR = r;
+                if(c < property.minC)
+                    property.minC = c;
+                if(c > property.maxC)
+                    property.maxC = c;
             }
         }
         debugFile.write("Leaving connectedPass3()\n");
