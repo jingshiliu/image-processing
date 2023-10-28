@@ -23,6 +23,26 @@ namespace Util{
         return array;
     }
 
+    static int findMin(int* array, int length){
+        int min = array[0];
+        for(int i = 1; i < length; i++){
+            if(array[i] < min){
+                min = array[i];
+            }
+        }
+        return min;
+    }
+    
+    static int findMax(int* array, int length){
+        int max = array[0];
+        for(int i = 1; i < length; i++){
+            if(array[i] > max){
+                max = array[i];
+            }
+        }
+        return max;
+    }
+
     static void printArray(int** array, int row, int col){
         for(int i = 0; i < row; i++){
             for(int j = 0; j < col; j++){
