@@ -33,6 +33,16 @@ namespace Util{
         return min;
     }
     
+    static int findMinSkipZero(int* array, int length){
+        int min = array[0];
+        for(int i = 1; i < length; i++){
+            if(array[i] < min && array[i] != 0){
+                min = array[i];
+            }
+        }
+        return min;
+    }
+
     static int findMax(int* array, int length){
         int max = array[0];
         for(int i = 1; i < length; i++){
