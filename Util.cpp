@@ -23,6 +23,14 @@ namespace Util{
         return array;
     }
 
+    static int min(int a, int b){
+        return a < b ? a : b;
+    }
+
+    static int max(int a, int b){
+        return a > b ? a : b;
+    }
+
     static int findMin(int* array, int length){
         int min = array[0];
         for(int i = 1; i < length; i++){
@@ -32,7 +40,7 @@ namespace Util{
         }
         return min;
     }
-    
+
     static int findMinSkipZero(int* array, int length){
         int min = array[0];
         for(int i = 1; i < length; i++){
@@ -48,6 +56,18 @@ namespace Util{
         for(int i = 1; i < length; i++){
             if(array[i] > max){
                 max = array[i];
+            }
+        }
+        return max;
+    }
+
+    static int findMax(int** array, int rows, int cols){
+        int max = array[0][0];
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
+                if(array[i][j] > max){
+                    max = array[i][j];
+                }
             }
         }
         return max;
