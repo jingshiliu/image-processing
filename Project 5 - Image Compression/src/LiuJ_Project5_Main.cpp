@@ -342,6 +342,20 @@ public:
         }
         debugFile << "Exiting expansionPass2() method" << endl;
     }
+
+    void threshold(int threshold, ofstream &outFile){
+        outFile << numRows << " " << numCols << " " << minVal << " " << threshold << '\n';
+        for(int i = 1; i < numRows + 1; i++){
+            for(int j = 1; j < numCols + 1; j++){
+                if(ZFAry[i][j] >= threshold){
+                    outFile << 1 << " ";
+                }else{
+                    outFile << 0 << " ";
+                }
+            }
+            outFile<< '\n';
+        }
+    }
 };
 
 
@@ -371,7 +385,7 @@ int main(int argc, const char* argv[]){
     imageCompression->loadSkeleton(skeletonInFile);
 
     imageCompression->imageDecompression(outFile, debugFile);
-
+    imageCompression->threshold(1, decompressedFile);
 
     inFile.close();
     outFile.close();
