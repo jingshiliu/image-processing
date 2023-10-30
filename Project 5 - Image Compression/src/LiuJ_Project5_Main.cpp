@@ -40,7 +40,7 @@ namespace Util{
 
     static int findMin(int* array, int length){
         int min = array[0];
-        for(int i = 1; i < length; i++){
+        for(int i = 0; i < length; i++){
             if(array[i] < min){
                 min = array[i];
             }
@@ -50,7 +50,7 @@ namespace Util{
 
     static int findMinSkipZero(int* array, int length){
         int min = array[0];
-        for(int i = 1; i < length; i++){
+        for(int i = 0; i < length; i++){
             if(array[i] < min && array[i] != 0){
                 min = array[i];
             }
@@ -60,7 +60,7 @@ namespace Util{
 
     static int findMax(int* array, int length){
         int max = array[0];
-        for(int i = 1; i < length; i++){
+        for(int i = 0; i < length; i++){
             if(array[i] > max){
                 max = array[i];
             }
@@ -200,7 +200,7 @@ public:
     void loadSkeleton(ifstream& inFile){
         int row, col, pixelVal;
         while(inFile >> row >> col >> pixelVal){
-            skeletonAry[row][col] = pixelVal;
+            ZFAry[row][col] = pixelVal;
         }
     }
 
@@ -226,7 +226,7 @@ public:
                                   ZFAry[i - 1][j],
                                   ZFAry[i - 1][j + 1],
                                   ZFAry[i][j - 1]};
-                ZFAry[i][j] = 1 + Util::findMinSkipZero(neighbors, 4);
+                ZFAry[i][j] = 1 + Util::findMin(neighbors, 4);
                 newMaxVal = Util::max(ZFAry[i][j], newMaxVal);
                 newMinVal = Util::min(ZFAry[i][j], newMinVal);
             }
@@ -240,12 +240,11 @@ public:
         for(int i = numRows; i > 0; i--){
             for(int j = numCols; j > 0; j--){
                 if (ZFAry[i][j] == 0) continue;
-                int neighborsAndSelf[5] = {ZFAry[i][j + 1] + 1,
-                                    ZFAry[i + 1][j - 1] + 1,
-                                    ZFAry[i + 1][j] + 1,
-                                    ZFAry[i + 1][j + 1] + 1,
-                                    ZFAry[i][j]};
-                ZFAry[i][j] = Util::findMinSkipZero(neighborsAndSelf, 5);
+                int neighbors[4] = {ZFAry[i][j + 1],
+                                    ZFAry[i + 1][j - 1],
+                                    ZFAry[i + 1][j],
+                                    ZFAry[i + 1][j + 1]};
+                ZFAry[i][j] = Util::min(ZFAry[i][j], 1 + Util::findMin(neighbors, 4));
                 newMaxVal = Util::max(ZFAry[i][j], newMaxVal);
                 newMinVal = Util::min(ZFAry[i][j], newMinVal);
             }
