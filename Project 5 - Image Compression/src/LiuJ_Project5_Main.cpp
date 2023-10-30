@@ -177,7 +177,7 @@ public:
     }
 
     void imageReformat(int** image, ofstream& outFile){
-        outFile << numRows << " " << numCols << " " << minVal << " " << maxVal << '\n';
+        outFile << numRows << " " << numCols << " " << newMinVal << " " << newMaxVal << '\n';
         string str;
         int curWidth,
             pixelWidth = to_string(newMaxVal).length();
@@ -297,6 +297,55 @@ public:
         }
         debugFile << "Exiting extractSkeleton() method" << endl;
     }
+
+    void imageDecompression(ofstream &outFile, ofstream &debugFile){
+        debugFile << "Entering imageDecompression() method" << endl;
+        expansionPass1(debugFile);
+        outFile<<"\n\nExpansion Pass 1"<<endl;
+        imageReformat(ZFAry, outFile);
+
+        expansionPass2(debugFile);
+        outFile<<"\n\nExpansion Pass 2"<<endl;
+        imageReformat(ZFAry, outFile);
+        debugFile << "Exiting imageDecompression() method" << endl;
+    }
+
+    void expansionPass1(ofstream& debugFile){
+        debugFile << "Entering expansionPass1() method" << endl;
+        for(int i = 1; i < numRows + 1; i++){
+            for(int j = 1; j < numCols + 1; j++){
+                if(ZFAry[i][j] > 0) continue;
+                int neighbors[8] = {ZFAry[i - 1][j - 1],
+                                    ZFAry[i - 1][j],
+                                    ZFAry[i - 1][j + 1],
+                                    ZFAry[i][j - 1],
+                                    ZFAry[i][j + 1],
+                                    ZFAry[i + 1][j - 1],
+                                    ZFAry[i + 1][j],
+                                    ZFAry[i + 1][j + 1]};
+                ZFAry[i][j] = Util::max(ZFAry[i][j], Util::findMax(neighbors, 8) - 1);
+            }
+        }
+        debugFile << "Exiting expansionPass1() method" << endl;
+    }
+
+    void expansionPass2(ofstream& debugFile){
+        debugFile << "Entering expansionPass2() method" << endl;
+        for(int i = numRows; i > 0; i--){
+            for(int j = numCols; j > 0; j--){
+                int neighbors[8] = {ZFAry[i - 1][j - 1],
+                                    ZFAry[i - 1][j],
+                                    ZFAry[i - 1][j + 1],
+                                    ZFAry[i][j - 1],
+                                    ZFAry[i][j + 1],
+                                    ZFAry[i + 1][j - 1],
+                                    ZFAry[i + 1][j],
+                                    ZFAry[i + 1][j + 1]};
+                ZFAry[i][j] = Util::max(ZFAry[i][j], Util::findMax(neighbors, 8) - 1);
+            }
+        }
+        debugFile << "Exiting expansionPass2() method" << endl;
+    }
 };
 
 
@@ -324,6 +373,8 @@ int main(int argc, const char* argv[]){
     ifstream skeletonFile2((string)argv[1] + "_skeleton.txt");
     imageCompression->setZero(imageCompression->ZFAry);
     imageCompression->loadSkeleton(skeletonFile2);
+
+    imageCompression->imageDecompression(outFile, debugFile);
 
 
     inFile.close();
