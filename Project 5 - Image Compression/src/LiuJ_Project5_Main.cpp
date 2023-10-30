@@ -198,12 +198,9 @@ public:
     }
 
     void loadSkeleton(ifstream& inFile){
-        int pixelVal;
-        for(int i = 1; i < numRows + 1; i++){
-            for(int j = 1; j < numCols + 1; j++){
-                inFile >> pixelVal;
-                skeletonAry[i][j] = pixelVal;
-            }
+        int row, col, pixelVal;
+        while(inFile >> row >> col >> pixelVal){
+            skeletonAry[row][col] = pixelVal;
         }
     }
 
@@ -370,9 +367,9 @@ int main(int argc, const char* argv[]){
 
 
     // load skeleton file and decompress
-    ifstream skeletonFile2((string)argv[1] + "_skeleton.txt");
+    ifstream skeletonInFile((string)argv[1] + "_skeleton.txt");
     imageCompression->setZero(imageCompression->ZFAry);
-    imageCompression->loadSkeleton(skeletonFile2);
+    imageCompression->loadSkeleton(skeletonInFile);
 
     imageCompression->imageDecompression(outFile, debugFile);
 
@@ -380,7 +377,7 @@ int main(int argc, const char* argv[]){
     inFile.close();
     outFile.close();
     debugFile.close();
-    skeletonFile2.close();
+    skeletonInFile.close();
     decompressedFile.close();
     return 0;
 }
