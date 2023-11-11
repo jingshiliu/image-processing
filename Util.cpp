@@ -41,6 +41,18 @@ namespace Util{
         return min;
     }
 
+    static int findMin(int** array, int rows, int cols){
+        int min = array[0][0];
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
+                if(array[i][j] < min){
+                    min = array[i][j];
+                }
+            }
+        }
+        return min;
+    }
+
     static int findMinSkipZero(int* array, int length){
         int min = array[0];
         for(int i = 0; i < length; i++){
