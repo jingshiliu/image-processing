@@ -30,118 +30,6 @@ namespace Util{
     static int max(int a, int b){
         return a > b ? a : b;
     }
-
-    static int findMin(int* array, int length){
-        int min = array[0];
-        for(int i = 0; i < length; i++){
-            if(array[i] < min){
-                min = array[i];
-            }
-        }
-        return min;
-    }
-
-    static int findMin(int** array, int rows, int cols){
-        int min = array[0][0];
-        for(int i = 0; i < rows; i++){
-            for(int j = 0; j < cols; j++){
-                if(array[i][j] < min){
-                    min = array[i][j];
-                }
-            }
-        }
-        return min;
-    }
-
-    static int findMinSkipZero(int* array, int length){
-        int min = array[0];
-        for(int i = 0; i < length; i++){
-            if(array[i] < min && array[i] != 0){
-                min = array[i];
-            }
-        }
-        return min;
-    }
-
-    static int findMax(int* array, int length){
-        int max = array[0];
-        for(int i = 0; i < length; i++){
-            if(array[i] > max){
-                max = array[i];
-            }
-        }
-        return max;
-    }
-
-    static int findMax(int** array, int rows, int cols){
-        int max = array[0][0];
-        for(int i = 0; i < rows; i++){
-            for(int j = 0; j < cols; j++){
-                if(array[i][j] > max){
-                    max = array[i][j];
-                }
-            }
-        }
-        return max;
-    }
-
-    static void printArray(int** array, int row, int col){
-        for(int i = 0; i < row; i++){
-            for(int j = 0; j < col; j++){
-                cout<<array[i][j]<<" ";
-            }
-            cout<<endl;
-        }
-        cout<<endl<<endl;
-    }
-
-    static void printArray(int* array, int length){
-        for(int i = 0; i < length; i++){
-            cout<< array[i] << " ";
-        }
-        cout<<endl<<endl;
-    }
-
-    static void prettyPrint(int** array, int rows, int cols){
-        for(int i = 0; i < rows; i++){
-            for(int j = 0; j < cols; j++){
-                if(array[i][j] == 0){
-                    cout<< ". ";
-                }else{
-                    cout <<"1 ";
-                }
-            }
-            cout << "\n";
-        }
-    }
-
-    static void loadFileToArray(ifstream& inFile, int** array, int rows, int cols){
-        int pixelVal;
-        for(int i = 0; i < rows; i++){
-            for(int j = 0; j < cols; j++){
-                inFile >> pixelVal;
-                array[i][j] = pixelVal;
-            }
-        }
-    }
-
-    static void loadFileToArray(ifstream& inFile, int* array, int length){
-        int pixelVal;
-        for(int i = 0; i < length; i++){
-            inFile >> pixelVal;
-            array[i] = pixelVal;
-        }
-    }
-
-    static int** copyArray(int** array, int rows, int cols){
-        int** output = getArray(rows, cols);
-        for(int i = 0; i < rows; i++){
-            for(int j = 0; j < cols; j++){
-                output[i][j] = array[i][j];
-            }
-        }
-        return output;
-    }
 }
 
 class EdgeDetector{
@@ -246,6 +134,37 @@ public:
         return sum;
     }
 
+    void sobelEdgeDetector(ofstream& debugFile){
+        debugFile << "Enter sobelEdgeDetector\n";
+        int newMax = 0, newMin = 99999;
+        int tempV, tempH, tempLD, tempRD;
+        for(int i = 1; i < numRows + 1; i++){
+            for(int j = 1; j < numCols + 1; j++){
+                tempH = abs(computeSobelConvolution(i, j, sobelHorizontalMask));
+                tempV = abs(computeSobelConvolution(i, j, sobelVerticalMask));
+                tempLD = abs(computeSobelConvolution(i, j, sobelLeftDiagonalMask));
+                tempRD = abs(computeSobelConvolution(i, j, sobelRightDiagonalMask));
+                sobelEdgeAry[i][j] = tempH + tempV + tempLD + tempRD;
+                newMax = Util::max(newMax, sobelEdgeAry[i][j]);
+                newMin = Util::min(newMin, sobelEdgeAry[i][j]);
+            }
+        }
+        maxVal = newMax;
+        minVal = newMin;
+        debugFile << "Exit sobelEdgeDetector\n";
+    }
+
+    int computeSobelConvolution(int row, int col, int mask[3][3]){
+        int sum = 0;
+        int startX = row - 1, startY = col - 1;
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                sum += mirrorFramedAry[startX + i][startY + j] * mask[i][j];
+            }
+        }
+        return sum;
+    }
+
     void computeHistogram(int** image, int* hist, ofstream& debugFile){
         debugFile << "Enter computeHistogram\n";
         for(int i = 1; i < numRows + 1; i++){
@@ -288,8 +207,15 @@ void useRobert(const char* argv[], EdgeDetector* edgeDetector, ofstream& outFile
     edgeDetector->outputHistogram(edgeDetector->histRobertAry, robertHistFile, debugFile);
 }
 
-void useSobel(EdgeDetector* edgeDetector){
+void useSobel(const char* argv[], EdgeDetector* edgeDetector, ofstream& outFile, ofstream& debugFile){
+    edgeDetector->sobelEdgeDetector(debugFile);
+    edgeDetector->computeHistogram(edgeDetector->sobelEdgeAry, edgeDetector->histSobelAry, debugFile);
+    edgeDetector->imageReformat(edgeDetector->sobelEdgeAry, outFile);
 
+    ofstream sobelEdgeFile((string)argv[1] + "_Sobel_Edge.txt"),
+             sobelHistFile((string)argv[1] + "_Sobel_Histogram.txt");
+    edgeDetector->outputImage(edgeDetector->sobelEdgeAry, sobelEdgeFile);
+    edgeDetector->outputHistogram(edgeDetector->histSobelAry, sobelHistFile, debugFile);
 }
 
 
@@ -305,7 +231,8 @@ int main(int argc, const char* argv[]) {
     if (choice == 1) {
         useRobert(argv, &edgeDetector, outFile, debugFile);
     } else if (choice == 2) {
-        useSobel(&edgeDetector);
-        return 0;
+        useSobel(argv, &edgeDetector, outFile, debugFile);
     }
+
+    return 0;
 }
