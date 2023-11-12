@@ -62,6 +62,7 @@ public:
         histRobertAry = Util::getArray(maxVal + 1);
         histSobelAry = Util::getArray(maxVal + 1);
         loadImage(inFile);
+        mirrorFraming();
     }
 
     void loadImage(ifstream& inFile){
@@ -225,7 +226,6 @@ int main(int argc, const char* argv[]) {
     ofstream outFile(argv[3]), debugFile(argv[4]);
 
     EdgeDetector edgeDetector(inFile);
-    edgeDetector.mirrorFraming();
     edgeDetector.imageReformat(edgeDetector.mirrorFramedAry, outFile);
 
     if (choice == 1) {
