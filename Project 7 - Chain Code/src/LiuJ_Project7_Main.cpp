@@ -158,6 +158,19 @@ public:
         this->row = 0;
         this->col = 0;
     }
+
+    void setIndex(int row, int col){
+        this->row = row;
+        this->col = col;
+    }
+
+    void moveDirection(Point& other){
+        setIndex(this->row + other.row, this->col + other.col);
+    }
+
+    bool operator!=(const Point& other){
+        return !(this->row == other.row && this->col == other.col);
+    }
 };
 
 class ChainCode{
@@ -171,9 +184,9 @@ public:
     int** reconstructAry;
     Point coordOffset[8] = {Point(0, 1), Point(-1, 1), Point(-1, 0), Point(-1, -1), Point(0, -1), Point(1, -1), Point(1, 0), Point(1, 1)};
     int zeroTable[8] = {6, 0, 0, 2, 2, 4, 4, 6};
-    Point* startPoint = nullptr;
-    Point* currentPoint = nullptr;
-    Point* neighborCoord = nullptr;
+    Point startPoint;
+    Point currentPoint;
+    Point neighborCoord;
     int lastZeroDirection;
     int chainDirection;
 
@@ -235,6 +248,62 @@ public:
         }
     }
 
+    void getChainCode(ofstream& chainCodeFile, ofstream& debugFile){
+        debugFile << "Entering getChainCode\n";
+        chainCodeFile << numRows << " " << numCols << " " << minVal << " " << maxVal << '\n';
+
+        for(int i = 0; i < numRows + 2; i++){
+            for(int j = 0; j < numCols + 2; j++){
+                if(zeroFramedAry[i][j] == 0) continue;
+
+                label = zeroFramedAry[i][j];
+                chainCodeFile << label << " " << i << " " << j << " ";
+
+                startPoint.setIndex(i, j);
+                currentPoint.setIndex(i, j);
+                lastZeroDirection = 4;
+
+                do{
+                    lastZeroDirection = (lastZeroDirection + 1) % 8;
+                    chainDirection = findNextPoint(debugFile);
+                    chainCodeFile << chainDirection << " ";
+
+                    currentPoint.moveDirection(coordOffset[chainDirection]);
+                    zeroFramedAry[currentPoint.row][currentPoint.col] = label + 4;
+                    lastZeroDirection = zeroTable[((chainDirection + 6) % 8)];
+                    debugFile << "lastZeroDirection: " << lastZeroDirection << " "
+                              << "currentPoint: " << currentPoint.row << " " << currentPoint.col << " "
+                              << "nextPoint: " << currentPoint.row + coordOffset[chainDirection].row << " "
+                              << currentPoint.col + coordOffset[chainDirection].col << "\n";
+                }while(currentPoint != startPoint);
+
+                break;
+            }
+        }
+
+        debugFile << "Leaving getChainCode \n";
+    }
+
+    int findNextPoint(ofstream& debugFile){
+        debugFile << "Entering findNextPoint\n";
+        int index = lastZeroDirection;
+        bool isFound = false;
+        int i, j;
+        while(!isFound){
+            i = currentPoint.row + coordOffset[index].row;
+            j = currentPoint.col + coordOffset[index].col;
+
+            if(zeroFramedAry[i][j] == label || zeroFramedAry[i][j] == label + 4) {
+                isFound = true;
+                chainDirection = index;
+            }else{
+                index = (index + 1) % 8;
+            }
+        }
+        debugFile << "Leaving findNextPoint\n";
+        return chainDirection;
+    }
+
     ~ChainCode(){
         for(int i = 0; i < numRows + 2; i++){
             delete[] zeroFramedAry[i];
@@ -242,10 +311,6 @@ public:
         }
         delete[] zeroFramedAry;
         delete[] reconstructAry;
-
-        delete startPoint;
-        delete currentPoint;
-        delete neighborCoord;
     }
 };
 
