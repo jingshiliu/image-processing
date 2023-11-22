@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <set>
 
 using namespace std;
 
@@ -252,35 +253,42 @@ public:
         debugFile << "Entering getChainCode\n";
         chainCodeFile << numRows << " " << numCols << " " << minVal << " " << maxVal << '\n';
 
+        bool foundStartPoint = false;
         for(int i = 0; i < numRows + 2; i++){
+            if (foundStartPoint) break;
             for(int j = 0; j < numCols + 2; j++){
                 if(zeroFramedAry[i][j] == 0) continue;
 
                 label = zeroFramedAry[i][j];
-                chainCodeFile << label << " " << i << " " << j << " ";
-
                 startPoint.setIndex(i, j);
                 currentPoint.setIndex(i, j);
                 lastZeroDirection = 4;
-
-                do{
-                    lastZeroDirection = (lastZeroDirection + 1) % 8;
-                    chainDirection = findNextPoint(debugFile);
-                    chainCodeFile << chainDirection << " ";
-
-                    currentPoint.moveDirection(coordOffset[chainDirection]);
-                    zeroFramedAry[currentPoint.row][currentPoint.col] = label + 4;
-                    lastZeroDirection = zeroTable[((chainDirection + 6) % 8)];
-                    debugFile << "lastZeroDirection: " << lastZeroDirection << " "
-                              << "currentPoint: " << currentPoint.row << " " << currentPoint.col << " "
-                              << "nextPoint: " << currentPoint.row + coordOffset[chainDirection].row << " "
-                              << currentPoint.col + coordOffset[chainDirection].col << "\n";
-                }while(currentPoint != startPoint);
-
+                // break the loop
+                foundStartPoint = true;
                 break;
             }
         }
 
+        chainCodeFile << label << " " << startPoint.row << " " << startPoint.col << " ";
+
+        do{
+            lastZeroDirection = (lastZeroDirection + 1) % 8;
+            chainDirection = findNextPoint(debugFile);
+            chainCodeFile << chainDirection << " ";
+
+            currentPoint.moveDirection(coordOffset[chainDirection]);
+            zeroFramedAry[currentPoint.row][currentPoint.col] = label + 4;
+            // lastZeroDirection is the direction of the same zero for the next point
+            // for example, if next point direction is 4, that means the last zero direction is 3
+            // 3 is the direction of last zero for current point
+            // and the last zero is at the direction of 2 for next point
+            lastZeroDirection = zeroTable[((chainDirection + 6) % 8)];
+            debugFile << "lastZeroDirection: " << lastZeroDirection << " "
+                      << "currentPoint: " << currentPoint.row << " " << currentPoint.col << " "
+                      << "nextPoint: " << currentPoint.row + coordOffset[chainDirection].row << " "
+                      << currentPoint.col + coordOffset[chainDirection].col << "\n";
+        }while(currentPoint != startPoint);
+        chainCodeFile << '\n';
         debugFile << "Leaving getChainCode \n";
     }
 
