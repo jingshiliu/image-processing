@@ -224,15 +224,15 @@ int main(int argc, const char* args[]){
 
     chainCode.getChainCode(chainCodeFile, debugFile);
     debugFile<< "After getChainCode, zeroFramedAry: \n";
-    outFile << "\n\nAfter getChainCode, zeroFramedAry: \n";
+    outFile << "After getChainCode, zeroFramedAry: \n";
     chainCode.reformatPrettyPrint(chainCode.zeroFramedAry, outFile);
 
     chainCodeFile.close();
     ifstream chainCodeFileIn(args[1] + string("_chainCode.txt"));
     chainCode.constructBoundary(chainCodeFileIn);
-
-    outFile << "\n\nAfter constructBoundary, reconstructAry: \n";
     chainCode.reformatPrettyPrint(chainCode.reconstructAry, outFile);
+
+    outFile << "After constructBoundary, reconstructAry: \n";
     chainCode.imageReformat(chainCode.reconstructAry, boundaryFile);
 
     return 0;
