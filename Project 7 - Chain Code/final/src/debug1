@@ -1,0 +1,469 @@
+After loadImage, zeroFramedAry: 
+Entering getChainCode
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 3 9 nextPoint: 4 8
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 4 8 nextPoint: 5 7
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 5 8 nextPoint: 6 8
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 6 8 nextPoint: 7 8
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 7 8 nextPoint: 8 8
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 8 8 nextPoint: 9 8
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 9 8 nextPoint: 10 8
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 10 8 nextPoint: 11 8
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 11 8 nextPoint: 12 8
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 12 8 nextPoint: 13 8
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 13 8 nextPoint: 14 8
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 14 8 nextPoint: 15 8
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 15 8 nextPoint: 16 8
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 16 8 nextPoint: 17 8
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 17 8 nextPoint: 18 8
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 18 8 nextPoint: 19 8
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 19 9 nextPoint: 20 10
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 20 10 nextPoint: 21 11
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 19 11 nextPoint: 18 12
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 18 12 nextPoint: 17 13
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 17 12 nextPoint: 16 12
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 16 12 nextPoint: 15 12
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 15 12 nextPoint: 14 12
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 14 13 nextPoint: 13 14
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 14 14 nextPoint: 14 15
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 14 15 nextPoint: 14 16
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 14 16 nextPoint: 14 17
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 14 17 nextPoint: 14 18
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 15 18 nextPoint: 16 19
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 16 18 nextPoint: 17 18
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 17 18 nextPoint: 18 18
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 18 18 nextPoint: 19 18
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 19 18 nextPoint: 20 18
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 20 18 nextPoint: 21 18
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 20 19 nextPoint: 20 20
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 20 20 nextPoint: 20 21
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 19 20 nextPoint: 18 20
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 18 20 nextPoint: 17 20
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 17 20 nextPoint: 16 20
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 16 20 nextPoint: 15 20
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 15 20 nextPoint: 14 20
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 14 21 nextPoint: 13 22
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 14 22 nextPoint: 14 23
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 14 23 nextPoint: 14 24
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 14 24 nextPoint: 14 25
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 14 25 nextPoint: 14 26
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 14 26 nextPoint: 14 27
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 14 27 nextPoint: 14 28
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 14 28 nextPoint: 14 29
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 15 29 nextPoint: 16 30
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 16 29 nextPoint: 17 29
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 17 29 nextPoint: 18 29
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 18 29 nextPoint: 19 29
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 19 30 nextPoint: 20 31
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 20 31 nextPoint: 21 32
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 19 32 nextPoint: 18 33
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 18 33 nextPoint: 17 34
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 17 33 nextPoint: 16 33
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 16 33 nextPoint: 15 33
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 15 33 nextPoint: 14 33
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 14 33 nextPoint: 13 33
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 13 33 nextPoint: 12 33
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 12 34 nextPoint: 11 35
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 12 35 nextPoint: 12 36
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 12 36 nextPoint: 12 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 4 currentPoint: 13 37 nextPoint: 14 38
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 14 37 nextPoint: 15 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 15 37 nextPoint: 16 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 16 37 nextPoint: 17 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 17 37 nextPoint: 18 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 16 37 nextPoint: 15 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 15 37 nextPoint: 14 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 14 37 nextPoint: 13 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 13 37 nextPoint: 12 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 12 37 nextPoint: 11 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 11 37 nextPoint: 10 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 10 37 nextPoint: 9 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 9 37 nextPoint: 8 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 8 37 nextPoint: 7 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 7 37 nextPoint: 6 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 6 37 nextPoint: 5 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 7 37 nextPoint: 8 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 8 37 nextPoint: 9 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 9 37 nextPoint: 10 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 10 37 nextPoint: 11 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 11 37 nextPoint: 12 37
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 12 36 nextPoint: 13 35
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 12 35 nextPoint: 12 34
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 12 34 nextPoint: 12 33
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 11 33 nextPoint: 10 32
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 10 33 nextPoint: 9 33
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 9 33 nextPoint: 8 33
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 8 33 nextPoint: 7 33
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 7 33 nextPoint: 6 33
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 6 33 nextPoint: 5 33
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 5 33 nextPoint: 4 33
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 4 33 nextPoint: 3 33
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 3 32 nextPoint: 2 31
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 2 31 nextPoint: 1 30
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 3 30 nextPoint: 4 29
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 4 29 nextPoint: 5 28
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 5 29 nextPoint: 6 29
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 6 29 nextPoint: 7 29
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 7 29 nextPoint: 8 29
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 8 29 nextPoint: 9 29
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 9 29 nextPoint: 10 29
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 10 29 nextPoint: 11 29
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 11 29 nextPoint: 12 29
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 12 28 nextPoint: 13 27
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 12 27 nextPoint: 12 26
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 11 26 nextPoint: 10 25
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 10 25 nextPoint: 9 24
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 9 25 nextPoint: 8 25
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 10 25 nextPoint: 11 25
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 11 24 nextPoint: 12 23
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 12 23 nextPoint: 13 22
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 12 22 nextPoint: 12 21
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 11 21 nextPoint: 10 20
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 10 20 nextPoint: 9 19
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 9 20 nextPoint: 8 20
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 8 20 nextPoint: 7 20
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 7 20 nextPoint: 6 20
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 6 20 nextPoint: 5 20
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 5 20 nextPoint: 4 20
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 4 20 nextPoint: 3 20
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 3 20 nextPoint: 2 20
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 2 20 nextPoint: 1 20
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 2 19 nextPoint: 2 18
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 2 18 nextPoint: 2 17
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 3 18 nextPoint: 4 18
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 4 18 nextPoint: 5 18
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 5 18 nextPoint: 6 18
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 6 18 nextPoint: 7 18
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 7 18 nextPoint: 8 18
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 8 18 nextPoint: 9 18
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 9 18 nextPoint: 10 18
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 10 18 nextPoint: 11 18
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 11 17 nextPoint: 12 16
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 11 16 nextPoint: 11 15
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 10 15 nextPoint: 9 14
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 9 15 nextPoint: 8 15
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 8 15 nextPoint: 7 15
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 9 15 nextPoint: 10 15
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 10 15 nextPoint: 11 15
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 2 currentPoint: 11 14 nextPoint: 12 13
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 11 13 nextPoint: 11 12
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 10 12 nextPoint: 9 11
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 9 12 nextPoint: 8 12
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 8 12 nextPoint: 7 12
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 7 12 nextPoint: 6 12
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 6 12 nextPoint: 5 12
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 5 12 nextPoint: 4 12
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 6 currentPoint: 4 12 nextPoint: 3 12
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 3 11 nextPoint: 2 10
+Entering findNextPoint
+Leaving findNextPoint
+lastZeroDirection: 0 currentPoint: 2 10 nextPoint: 1 9
+Leaving getChainCode 
+After getChainCode, zeroFramedAry: 
