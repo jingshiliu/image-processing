@@ -1,0 +1,1324 @@
+Entering thinning(), before thinning 4 sides, arrayOne is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 5 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . 5 5 5 . . . . . . 5 5 5 . . . . . . . . . 5 5 5 . . . . . . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . . . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . . . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . 5 . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . 5 . . 5 5 5 . . . . 5 . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . 5 . . 5 5 5 . . . . 5 . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . 5 5 5 . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . 
+. . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . . . . . 
+. . . . . . . . 5 5 5 . . . . . . 5 5 5 . . . . . . . . . 5 5 5 . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 5 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering northThinning(), cycleCount = 0 changeCount = 0
+In northThinning, i = 2 j = 10 nonZeroCount = 3 flag = true
+In northThinning, i = 2 j = 18 nonZeroCount = 3 flag = false
+In northThinning, i = 2 j = 19 nonZeroCount = 5 flag = false
+In northThinning, i = 2 j = 20 nonZeroCount = 3 flag = false
+In northThinning, i = 2 j = 31 nonZeroCount = 3 flag = true
+In northThinning, i = 3 j = 9 nonZeroCount = 5 flag = false
+In northThinning, i = 3 j = 11 nonZeroCount = 5 flag = false
+In northThinning, i = 3 j = 30 nonZeroCount = 5 flag = false
+In northThinning, i = 3 j = 32 nonZeroCount = 5 flag = false
+In northThinning, i = 4 j = 8 nonZeroCount = 4 flag = false
+In northThinning, i = 4 j = 12 nonZeroCount = 4 flag = false
+In northThinning, i = 4 j = 29 nonZeroCount = 4 flag = false
+In northThinning, i = 4 j = 33 nonZeroCount = 4 flag = false
+In northThinning, i = 6 j = 37 nonZeroCount = 1 flag = true
+In northThinning, i = 8 j = 15 nonZeroCount = 1 flag = true
+In northThinning, i = 9 j = 25 nonZeroCount = 1 flag = true
+In northThinning, i = 11 j = 13 nonZeroCount = 6 flag = false
+In northThinning, i = 11 j = 14 nonZeroCount = 6 flag = false
+In northThinning, i = 11 j = 16 nonZeroCount = 6 flag = false
+In northThinning, i = 11 j = 17 nonZeroCount = 6 flag = false
+In northThinning, i = 11 j = 21 nonZeroCount = 5 flag = false
+In northThinning, i = 11 j = 24 nonZeroCount = 5 flag = false
+In northThinning, i = 11 j = 26 nonZeroCount = 5 flag = false
+In northThinning, i = 12 j = 22 nonZeroCount = 6 flag = false
+In northThinning, i = 12 j = 23 nonZeroCount = 6 flag = false
+In northThinning, i = 12 j = 27 nonZeroCount = 6 flag = false
+In northThinning, i = 12 j = 28 nonZeroCount = 6 flag = false
+In northThinning, i = 12 j = 34 nonZeroCount = 4 flag = true
+In northThinning, i = 12 j = 35 nonZeroCount = 2 flag = true
+In northThinning, i = 12 j = 36 nonZeroCount = 4 flag = true
+Leaving northThinning(), cycleCount = 0 changeCount = 20
+After northThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 5 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . 5 5 5 . . . . . . 5 5 5 . . . . . . . . . 5 5 5 . . . . . . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . . . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . 5 . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . 5 . . 5 5 5 . . . . 5 . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . 5 . . 5 5 5 . . . . 5 . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . 5 . . 5 5 5 . . . . 5 . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . 5 5 5 . . 5 5 5 5 5 5 5 5 5 . . . 
+. . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . . . . . 
+. . . . . . . . 5 5 5 . . . . . . 5 5 5 . . . . . . . . . 5 5 5 . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 5 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering southThinning(), cycleCount = 0 changeCount = 20
+In southThinning, i = 12 j = 34 nonZeroCount = 4 flag = true
+In southThinning, i = 12 j = 35 nonZeroCount = 2 flag = true
+In southThinning, i = 12 j = 36 nonZeroCount = 4 flag = true
+In southThinning, i = 14 j = 13 nonZeroCount = 6 flag = false
+In southThinning, i = 14 j = 14 nonZeroCount = 5 flag = false
+In southThinning, i = 14 j = 15 nonZeroCount = 5 flag = false
+In southThinning, i = 14 j = 16 nonZeroCount = 5 flag = false
+In southThinning, i = 14 j = 17 nonZeroCount = 6 flag = false
+In southThinning, i = 14 j = 21 nonZeroCount = 6 flag = false
+In southThinning, i = 14 j = 22 nonZeroCount = 5 flag = false
+In southThinning, i = 14 j = 23 nonZeroCount = 5 flag = false
+In southThinning, i = 14 j = 24 nonZeroCount = 5 flag = false
+In southThinning, i = 14 j = 25 nonZeroCount = 5 flag = false
+In southThinning, i = 14 j = 26 nonZeroCount = 5 flag = false
+In southThinning, i = 14 j = 27 nonZeroCount = 5 flag = false
+In southThinning, i = 14 j = 28 nonZeroCount = 6 flag = false
+In southThinning, i = 17 j = 37 nonZeroCount = 1 flag = true
+In southThinning, i = 18 j = 8 nonZeroCount = 4 flag = false
+In southThinning, i = 18 j = 12 nonZeroCount = 4 flag = false
+In southThinning, i = 18 j = 29 nonZeroCount = 4 flag = false
+In southThinning, i = 18 j = 33 nonZeroCount = 4 flag = false
+In southThinning, i = 19 j = 9 nonZeroCount = 5 flag = false
+In southThinning, i = 19 j = 11 nonZeroCount = 5 flag = false
+In southThinning, i = 19 j = 30 nonZeroCount = 5 flag = false
+In southThinning, i = 19 j = 32 nonZeroCount = 5 flag = false
+In southThinning, i = 20 j = 10 nonZeroCount = 3 flag = true
+In southThinning, i = 20 j = 18 nonZeroCount = 3 flag = false
+In southThinning, i = 20 j = 19 nonZeroCount = 5 flag = false
+In southThinning, i = 20 j = 20 nonZeroCount = 3 flag = false
+In southThinning, i = 20 j = 31 nonZeroCount = 3 flag = true
+Leaving southThinning(), cycleCount = 0 changeCount = 42
+After southThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 5 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . 5 5 5 . . . . . . 5 5 5 . . . . . . . . . 5 5 5 . . . . . . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . . . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . 5 . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . 5 . . 5 5 5 . . . . 5 . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . 5 . . 5 5 5 . . . . 5 . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . 5 . . 5 5 5 . . . . 5 . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . 5 5 5 . . 5 5 5 5 5 5 5 5 5 . . . 
+. . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . 5 5 5 5 5 . . . . . 5 5 5 . . . . . . . . 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . 5 5 5 . . . . . . . . . 5 5 5 . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 5 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering westThinning(), cycleCount = 0 changeCount = 42
+In westThinning, i = 2 j = 10 nonZeroCount = 1 flag = true
+In westThinning, i = 2 j = 18 nonZeroCount = 2 flag = true
+In westThinning, i = 2 j = 20 nonZeroCount = 2 flag = true
+In westThinning, i = 2 j = 31 nonZeroCount = 1 flag = true
+In westThinning, i = 3 j = 10 nonZeroCount = 4 flag = true
+In westThinning, i = 3 j = 18 nonZeroCount = 4 flag = false
+In westThinning, i = 3 j = 31 nonZeroCount = 4 flag = true
+In westThinning, i = 4 j = 9 nonZeroCount = 5 flag = false
+In westThinning, i = 4 j = 18 nonZeroCount = 5 flag = false
+In westThinning, i = 4 j = 30 nonZeroCount = 5 flag = false
+In westThinning, i = 5 j = 8 nonZeroCount = 4 flag = false
+In westThinning, i = 5 j = 18 nonZeroCount = 5 flag = false
+In westThinning, i = 5 j = 29 nonZeroCount = 4 flag = false
+In westThinning, i = 6 j = 8 nonZeroCount = 5 flag = false
+In westThinning, i = 6 j = 18 nonZeroCount = 5 flag = false
+In westThinning, i = 6 j = 29 nonZeroCount = 5 flag = false
+In westThinning, i = 6 j = 37 nonZeroCount = 1 flag = true
+In westThinning, i = 7 j = 8 nonZeroCount = 5 flag = false
+In westThinning, i = 7 j = 18 nonZeroCount = 5 flag = false
+In westThinning, i = 7 j = 29 nonZeroCount = 5 flag = false
+In westThinning, i = 7 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 8 j = 8 nonZeroCount = 5 flag = false
+In westThinning, i = 8 j = 15 nonZeroCount = 1 flag = true
+In westThinning, i = 8 j = 18 nonZeroCount = 5 flag = false
+In westThinning, i = 8 j = 29 nonZeroCount = 5 flag = false
+In westThinning, i = 8 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 9 j = 8 nonZeroCount = 5 flag = false
+In westThinning, i = 9 j = 15 nonZeroCount = 2 flag = true
+In westThinning, i = 9 j = 18 nonZeroCount = 5 flag = false
+In westThinning, i = 9 j = 25 nonZeroCount = 1 flag = true
+In westThinning, i = 9 j = 29 nonZeroCount = 5 flag = false
+In westThinning, i = 9 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 8 nonZeroCount = 5 flag = false
+In westThinning, i = 10 j = 15 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 18 nonZeroCount = 5 flag = false
+In westThinning, i = 10 j = 25 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 29 nonZeroCount = 5 flag = false
+In westThinning, i = 10 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 8 nonZeroCount = 5 flag = false
+In westThinning, i = 11 j = 15 nonZeroCount = 4 flag = true
+In westThinning, i = 11 j = 18 nonZeroCount = 6 flag = false
+In westThinning, i = 11 j = 25 nonZeroCount = 4 flag = true
+In westThinning, i = 11 j = 29 nonZeroCount = 5 flag = false
+In westThinning, i = 11 j = 37 nonZeroCount = 3 flag = true
+In westThinning, i = 12 j = 8 nonZeroCount = 5 flag = false
+In westThinning, i = 12 j = 24 nonZeroCount = 5 flag = false
+In westThinning, i = 12 j = 29 nonZeroCount = 6 flag = false
+In westThinning, i = 13 j = 8 nonZeroCount = 5 flag = false
+In westThinning, i = 13 j = 37 nonZeroCount = 3 flag = true
+In westThinning, i = 14 j = 8 nonZeroCount = 5 flag = false
+In westThinning, i = 14 j = 18 nonZeroCount = 6 flag = false
+In westThinning, i = 14 j = 29 nonZeroCount = 6 flag = false
+In westThinning, i = 14 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 15 j = 8 nonZeroCount = 5 flag = false
+In westThinning, i = 15 j = 18 nonZeroCount = 5 flag = false
+In westThinning, i = 15 j = 29 nonZeroCount = 5 flag = false
+In westThinning, i = 15 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 16 j = 8 nonZeroCount = 5 flag = false
+In westThinning, i = 16 j = 18 nonZeroCount = 5 flag = false
+In westThinning, i = 16 j = 29 nonZeroCount = 5 flag = false
+In westThinning, i = 16 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 17 j = 8 nonZeroCount = 4 flag = false
+In westThinning, i = 17 j = 18 nonZeroCount = 5 flag = false
+In westThinning, i = 17 j = 29 nonZeroCount = 4 flag = false
+In westThinning, i = 17 j = 37 nonZeroCount = 1 flag = true
+In westThinning, i = 18 j = 9 nonZeroCount = 5 flag = false
+In westThinning, i = 18 j = 18 nonZeroCount = 5 flag = false
+In westThinning, i = 18 j = 30 nonZeroCount = 5 flag = false
+In westThinning, i = 19 j = 10 nonZeroCount = 4 flag = true
+In westThinning, i = 19 j = 18 nonZeroCount = 4 flag = false
+In westThinning, i = 19 j = 31 nonZeroCount = 4 flag = true
+In westThinning, i = 20 j = 10 nonZeroCount = 1 flag = true
+In westThinning, i = 20 j = 18 nonZeroCount = 2 flag = true
+In westThinning, i = 20 j = 20 nonZeroCount = 2 flag = true
+In westThinning, i = 20 j = 31 nonZeroCount = 1 flag = true
+Leaving westThinning(), cycleCount = 0 changeCount = 87
+After westThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 5 . . . . . . . 5 5 . . . . . . . . . . 5 5 . . . . . . . . 
+. . . . . . . . 5 5 5 5 . . . . . . 5 5 . . . . . . . . . 5 5 5 5 . . . . . . . 
+. . . . . . . . 5 5 5 5 . . . . . . 5 5 . . . . . . . . . 5 5 5 5 . . . 5 . . . 
+. . . . . . . . 5 5 5 5 . . . . . . 5 5 . . . . . . . . . 5 5 5 5 . . . 5 . . . 
+. . . . . . . . 5 5 5 5 . . 5 . . . 5 5 . . . . . . . . . 5 5 5 5 . . . 5 . . . 
+. . . . . . . . 5 5 5 5 . . 5 . . . 5 5 . . . . 5 . . . . 5 5 5 5 . . . 5 . . . 
+. . . . . . . . 5 5 5 5 . . 5 . . . 5 5 . . . . 5 . . . . 5 5 5 5 . . . 5 . . . 
+. . . . . . . . 5 5 5 5 . . 5 . . . 5 5 . . . . 5 . . . . 5 5 5 5 . . . 5 . . . 
+. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . 5 5 . . . 5 5 5 5 5 5 5 5 . . . 
+. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . 5 . . . 
+. . . . . . . . 5 5 5 5 . . . . . . 5 5 . . . . . . . . . 5 5 5 5 . . . 5 . . . 
+. . . . . . . . 5 5 5 5 . . . . . . 5 5 . . . . . . . . . 5 5 5 5 . . . 5 . . . 
+. . . . . . . . 5 5 5 5 . . . . . . 5 5 . . . . . . . . . 5 5 5 5 . . . 5 . . . 
+. . . . . . . . 5 5 5 5 . . . . . . 5 5 . . . . . . . . . 5 5 5 5 . . . 5 . . . 
+. . . . . . . . . 5 5 . . . . . . . 5 5 . . . . . . . . . . 5 5 . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering eastThinning(), cycleCount = 0 changeCount = 87
+In eastThinning, i = 2 j = 10 nonZeroCount = 1 flag = true
+In eastThinning, i = 2 j = 18 nonZeroCount = 1 flag = true
+In eastThinning, i = 2 j = 20 nonZeroCount = 2 flag = true
+In eastThinning, i = 2 j = 31 nonZeroCount = 1 flag = true
+In eastThinning, i = 3 j = 10 nonZeroCount = 3 flag = true
+In eastThinning, i = 3 j = 20 nonZeroCount = 4 flag = false
+In eastThinning, i = 3 j = 31 nonZeroCount = 3 flag = true
+In eastThinning, i = 4 j = 11 nonZeroCount = 5 flag = false
+In eastThinning, i = 4 j = 20 nonZeroCount = 5 flag = false
+In eastThinning, i = 4 j = 32 nonZeroCount = 5 flag = false
+In eastThinning, i = 5 j = 12 nonZeroCount = 4 flag = false
+In eastThinning, i = 5 j = 20 nonZeroCount = 5 flag = false
+In eastThinning, i = 5 j = 33 nonZeroCount = 4 flag = false
+In eastThinning, i = 6 j = 12 nonZeroCount = 5 flag = false
+In eastThinning, i = 6 j = 20 nonZeroCount = 5 flag = false
+In eastThinning, i = 6 j = 33 nonZeroCount = 5 flag = false
+In eastThinning, i = 6 j = 37 nonZeroCount = 1 flag = true
+In eastThinning, i = 7 j = 12 nonZeroCount = 5 flag = false
+In eastThinning, i = 7 j = 20 nonZeroCount = 5 flag = false
+In eastThinning, i = 7 j = 33 nonZeroCount = 5 flag = false
+In eastThinning, i = 7 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 8 j = 12 nonZeroCount = 5 flag = false
+In eastThinning, i = 8 j = 15 nonZeroCount = 1 flag = true
+In eastThinning, i = 8 j = 20 nonZeroCount = 5 flag = false
+In eastThinning, i = 8 j = 33 nonZeroCount = 5 flag = false
+In eastThinning, i = 8 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 9 j = 12 nonZeroCount = 5 flag = false
+In eastThinning, i = 9 j = 15 nonZeroCount = 2 flag = true
+In eastThinning, i = 9 j = 20 nonZeroCount = 5 flag = false
+In eastThinning, i = 9 j = 25 nonZeroCount = 1 flag = true
+In eastThinning, i = 9 j = 33 nonZeroCount = 5 flag = false
+In eastThinning, i = 9 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 12 nonZeroCount = 5 flag = false
+In eastThinning, i = 10 j = 15 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 20 nonZeroCount = 5 flag = false
+In eastThinning, i = 10 j = 25 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 33 nonZeroCount = 5 flag = false
+In eastThinning, i = 10 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 12 nonZeroCount = 6 flag = false
+In eastThinning, i = 11 j = 15 nonZeroCount = 4 flag = true
+In eastThinning, i = 11 j = 20 nonZeroCount = 6 flag = false
+In eastThinning, i = 11 j = 25 nonZeroCount = 3 flag = true
+In eastThinning, i = 11 j = 33 nonZeroCount = 6 flag = false
+In eastThinning, i = 11 j = 37 nonZeroCount = 3 flag = true
+In eastThinning, i = 12 j = 21 nonZeroCount = 5 flag = false
+In eastThinning, i = 12 j = 26 nonZeroCount = 5 flag = false
+In eastThinning, i = 12 j = 37 nonZeroCount = 3 flag = false
+In eastThinning, i = 13 j = 33 nonZeroCount = 6 flag = false
+In eastThinning, i = 13 j = 37 nonZeroCount = 3 flag = true
+In eastThinning, i = 14 j = 12 nonZeroCount = 6 flag = false
+In eastThinning, i = 14 j = 20 nonZeroCount = 6 flag = false
+In eastThinning, i = 14 j = 33 nonZeroCount = 5 flag = false
+In eastThinning, i = 14 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 15 j = 12 nonZeroCount = 5 flag = false
+In eastThinning, i = 15 j = 20 nonZeroCount = 5 flag = false
+In eastThinning, i = 15 j = 33 nonZeroCount = 5 flag = false
+In eastThinning, i = 15 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 16 j = 12 nonZeroCount = 5 flag = false
+In eastThinning, i = 16 j = 20 nonZeroCount = 5 flag = false
+In eastThinning, i = 16 j = 33 nonZeroCount = 5 flag = false
+In eastThinning, i = 16 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 17 j = 12 nonZeroCount = 4 flag = false
+In eastThinning, i = 17 j = 20 nonZeroCount = 5 flag = false
+In eastThinning, i = 17 j = 33 nonZeroCount = 4 flag = false
+In eastThinning, i = 17 j = 37 nonZeroCount = 1 flag = true
+In eastThinning, i = 18 j = 11 nonZeroCount = 5 flag = false
+In eastThinning, i = 18 j = 20 nonZeroCount = 5 flag = false
+In eastThinning, i = 18 j = 32 nonZeroCount = 5 flag = false
+In eastThinning, i = 19 j = 10 nonZeroCount = 3 flag = true
+In eastThinning, i = 19 j = 20 nonZeroCount = 4 flag = false
+In eastThinning, i = 19 j = 31 nonZeroCount = 3 flag = true
+In eastThinning, i = 20 j = 10 nonZeroCount = 1 flag = true
+In eastThinning, i = 20 j = 18 nonZeroCount = 1 flag = true
+In eastThinning, i = 20 j = 20 nonZeroCount = 2 flag = true
+In eastThinning, i = 20 j = 31 nonZeroCount = 1 flag = true
+Leaving eastThinning(), cycleCount = 0 changeCount = 131
+After eastThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . . . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . 5 . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . 5 . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . 5 . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 . . . . 5 . . . . 5 5 5 5 5 5 5 5 . . . 
+. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Leaving thinning(), cycleCount = 0 changeCount = 131
+Entering thinning(), before thinning 4 sides, arrayOne is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . . . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . 5 . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . 5 . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . 5 . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 . . . . 5 . . . . 5 5 5 5 5 5 5 5 . . . 
+. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering northThinning(), cycleCount = 1 changeCount = 0
+In northThinning, i = 2 j = 10 nonZeroCount = 1 flag = true
+In northThinning, i = 2 j = 18 nonZeroCount = 1 flag = true
+In northThinning, i = 2 j = 20 nonZeroCount = 1 flag = true
+In northThinning, i = 2 j = 31 nonZeroCount = 1 flag = true
+In northThinning, i = 3 j = 19 nonZeroCount = 3 flag = true
+In northThinning, i = 5 j = 9 nonZeroCount = 4 flag = false
+In northThinning, i = 5 j = 11 nonZeroCount = 4 flag = false
+In northThinning, i = 5 j = 30 nonZeroCount = 4 flag = false
+In northThinning, i = 5 j = 32 nonZeroCount = 4 flag = false
+In northThinning, i = 6 j = 37 nonZeroCount = 1 flag = true
+In northThinning, i = 8 j = 15 nonZeroCount = 1 flag = true
+In northThinning, i = 9 j = 25 nonZeroCount = 1 flag = true
+In northThinning, i = 12 j = 12 nonZeroCount = 6 flag = false
+In northThinning, i = 12 j = 13 nonZeroCount = 5 flag = false
+In northThinning, i = 12 j = 14 nonZeroCount = 6 flag = false
+In northThinning, i = 12 j = 16 nonZeroCount = 6 flag = false
+In northThinning, i = 12 j = 17 nonZeroCount = 5 flag = false
+In northThinning, i = 12 j = 18 nonZeroCount = 6 flag = false
+In northThinning, i = 12 j = 20 nonZeroCount = 5 flag = false
+In northThinning, i = 12 j = 33 nonZeroCount = 4 flag = true
+In northThinning, i = 12 j = 34 nonZeroCount = 2 flag = true
+In northThinning, i = 12 j = 35 nonZeroCount = 2 flag = true
+In northThinning, i = 12 j = 36 nonZeroCount = 4 flag = true
+In northThinning, i = 13 j = 21 nonZeroCount = 3 flag = true
+In northThinning, i = 13 j = 22 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 23 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 24 nonZeroCount = 3 flag = true
+In northThinning, i = 13 j = 26 nonZeroCount = 3 flag = true
+In northThinning, i = 13 j = 27 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 28 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 29 nonZeroCount = 4 flag = true
+In northThinning, i = 20 j = 18 nonZeroCount = 1 flag = true
+In northThinning, i = 20 j = 20 nonZeroCount = 1 flag = true
+Leaving northThinning(), cycleCount = 1 changeCount = 11
+After northThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . 5 . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . 5 . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . 5 . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . 5 . . . . 5 5 5 5 5 5 5 5 . . . 
+. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering southThinning(), cycleCount = 1 changeCount = 11
+In southThinning, i = 2 j = 18 nonZeroCount = 1 flag = true
+In southThinning, i = 2 j = 20 nonZeroCount = 1 flag = true
+In southThinning, i = 12 j = 33 nonZeroCount = 4 flag = true
+In southThinning, i = 12 j = 34 nonZeroCount = 2 flag = true
+In southThinning, i = 12 j = 35 nonZeroCount = 2 flag = true
+In southThinning, i = 12 j = 36 nonZeroCount = 4 flag = true
+In southThinning, i = 13 j = 12 nonZeroCount = 4 flag = true
+In southThinning, i = 13 j = 13 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 14 nonZeroCount = 3 flag = true
+In southThinning, i = 13 j = 15 nonZeroCount = 3 flag = false
+In southThinning, i = 13 j = 16 nonZeroCount = 3 flag = true
+In southThinning, i = 13 j = 17 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 18 nonZeroCount = 4 flag = true
+In southThinning, i = 13 j = 20 nonZeroCount = 4 flag = true
+In southThinning, i = 13 j = 21 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 22 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 23 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 24 nonZeroCount = 3 flag = true
+In southThinning, i = 13 j = 25 nonZeroCount = 3 flag = false
+In southThinning, i = 13 j = 26 nonZeroCount = 3 flag = true
+In southThinning, i = 13 j = 27 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 28 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 29 nonZeroCount = 4 flag = true
+In southThinning, i = 17 j = 9 nonZeroCount = 4 flag = false
+In southThinning, i = 17 j = 11 nonZeroCount = 4 flag = false
+In southThinning, i = 17 j = 30 nonZeroCount = 4 flag = false
+In southThinning, i = 17 j = 32 nonZeroCount = 4 flag = false
+In southThinning, i = 17 j = 37 nonZeroCount = 1 flag = true
+In southThinning, i = 19 j = 19 nonZeroCount = 3 flag = true
+In southThinning, i = 20 j = 10 nonZeroCount = 1 flag = true
+In southThinning, i = 20 j = 18 nonZeroCount = 1 flag = true
+In southThinning, i = 20 j = 20 nonZeroCount = 1 flag = true
+In southThinning, i = 20 j = 31 nonZeroCount = 1 flag = true
+Leaving southThinning(), cycleCount = 1 changeCount = 15
+After southThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . 5 . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . 5 . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . 5 . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . 5 . . . 5 . . . . . 5 . . . . 5 5 5 5 5 5 5 5 . . . 
+. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . 5 5 5 . . . . . . . 5 . . . . . . . . . . 5 5 5 . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering westThinning(), cycleCount = 1 changeCount = 15
+In westThinning, i = 2 j = 10 nonZeroCount = 1 flag = true
+In westThinning, i = 2 j = 18 nonZeroCount = 1 flag = true
+In westThinning, i = 2 j = 20 nonZeroCount = 1 flag = true
+In westThinning, i = 2 j = 31 nonZeroCount = 1 flag = true
+In westThinning, i = 3 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 3 j = 19 nonZeroCount = 3 flag = true
+In westThinning, i = 3 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 4 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 4 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 4 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 5 j = 10 nonZeroCount = 4 flag = true
+In westThinning, i = 5 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 5 j = 31 nonZeroCount = 4 flag = true
+In westThinning, i = 6 j = 9 nonZeroCount = 4 flag = false
+In westThinning, i = 6 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 6 j = 30 nonZeroCount = 4 flag = false
+In westThinning, i = 6 j = 37 nonZeroCount = 1 flag = true
+In westThinning, i = 7 j = 9 nonZeroCount = 5 flag = false
+In westThinning, i = 7 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 7 j = 30 nonZeroCount = 5 flag = false
+In westThinning, i = 7 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 8 j = 9 nonZeroCount = 5 flag = false
+In westThinning, i = 8 j = 15 nonZeroCount = 1 flag = true
+In westThinning, i = 8 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 8 j = 30 nonZeroCount = 5 flag = false
+In westThinning, i = 8 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 9 j = 9 nonZeroCount = 5 flag = false
+In westThinning, i = 9 j = 15 nonZeroCount = 2 flag = true
+In westThinning, i = 9 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 9 j = 25 nonZeroCount = 1 flag = true
+In westThinning, i = 9 j = 30 nonZeroCount = 5 flag = false
+In westThinning, i = 9 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 9 nonZeroCount = 5 flag = false
+In westThinning, i = 10 j = 15 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 25 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 30 nonZeroCount = 5 flag = false
+In westThinning, i = 10 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 9 nonZeroCount = 5 flag = false
+In westThinning, i = 11 j = 15 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 25 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 30 nonZeroCount = 5 flag = false
+In westThinning, i = 11 j = 37 nonZeroCount = 3 flag = true
+In westThinning, i = 12 j = 9 nonZeroCount = 5 flag = false
+In westThinning, i = 12 j = 15 nonZeroCount = 4 flag = true
+In westThinning, i = 12 j = 19 nonZeroCount = 4 flag = true
+In westThinning, i = 12 j = 25 nonZeroCount = 4 flag = true
+In westThinning, i = 12 j = 30 nonZeroCount = 6 flag = false
+In westThinning, i = 13 j = 9 nonZeroCount = 5 flag = false
+In westThinning, i = 13 j = 37 nonZeroCount = 3 flag = true
+In westThinning, i = 14 j = 9 nonZeroCount = 5 flag = false
+In westThinning, i = 14 j = 19 nonZeroCount = 4 flag = true
+In westThinning, i = 14 j = 30 nonZeroCount = 6 flag = false
+In westThinning, i = 14 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 15 j = 9 nonZeroCount = 5 flag = false
+In westThinning, i = 15 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 15 j = 30 nonZeroCount = 5 flag = false
+In westThinning, i = 15 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 16 j = 9 nonZeroCount = 4 flag = false
+In westThinning, i = 16 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 16 j = 30 nonZeroCount = 4 flag = false
+In westThinning, i = 16 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 17 j = 10 nonZeroCount = 4 flag = true
+In westThinning, i = 17 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 17 j = 31 nonZeroCount = 4 flag = true
+In westThinning, i = 17 j = 37 nonZeroCount = 1 flag = true
+In westThinning, i = 18 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 18 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 18 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 19 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 19 j = 19 nonZeroCount = 3 flag = true
+In westThinning, i = 19 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 20 j = 10 nonZeroCount = 1 flag = true
+In westThinning, i = 20 j = 18 nonZeroCount = 1 flag = true
+In westThinning, i = 20 j = 20 nonZeroCount = 1 flag = true
+In westThinning, i = 20 j = 31 nonZeroCount = 1 flag = true
+Leaving westThinning(), cycleCount = 1 changeCount = 36
+After westThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 5 . . . . . . . 5 . . . . . . . . . . . 5 5 . . . . 5 . . . 
+. . . . . . . . . 5 5 . . . . . . . 5 . . . . . . . . . . . 5 5 . . . . 5 . . . 
+. . . . . . . . . 5 5 . . . 5 . . . 5 . . . . . . . . . . . 5 5 . . . . 5 . . . 
+. . . . . . . . . 5 5 . . . 5 . . . 5 . . . . . 5 . . . . . 5 5 . . . . 5 . . . 
+. . . . . . . . . 5 5 . . . 5 . . . 5 . . . . . 5 . . . . . 5 5 . . . . 5 . . . 
+. . . . . . . . . 5 5 . . . 5 . . . 5 . . . . . 5 . . . . . 5 5 . . . . 5 . . . 
+. . . . . . . . . 5 5 . . . 5 . . . 5 . . . . . 5 . . . . . 5 5 5 5 5 5 5 . . . 
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . 5 . . . 
+. . . . . . . . . 5 5 . . . . . . . 5 . . . . . . . . . . . 5 5 . . . . 5 . . . 
+. . . . . . . . . 5 5 . . . . . . . 5 . . . . . . . . . . . 5 5 . . . . 5 . . . 
+. . . . . . . . . 5 5 . . . . . . . 5 . . . . . . . . . . . 5 5 . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering eastThinning(), cycleCount = 1 changeCount = 36
+In eastThinning, i = 2 j = 10 nonZeroCount = 1 flag = true
+In eastThinning, i = 2 j = 18 nonZeroCount = 1 flag = true
+In eastThinning, i = 2 j = 20 nonZeroCount = 1 flag = true
+In eastThinning, i = 2 j = 31 nonZeroCount = 1 flag = true
+In eastThinning, i = 3 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 3 j = 19 nonZeroCount = 3 flag = true
+In eastThinning, i = 3 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 4 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 4 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 4 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 5 j = 10 nonZeroCount = 3 flag = true
+In eastThinning, i = 5 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 5 j = 31 nonZeroCount = 3 flag = true
+In eastThinning, i = 6 j = 11 nonZeroCount = 4 flag = false
+In eastThinning, i = 6 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 6 j = 32 nonZeroCount = 4 flag = false
+In eastThinning, i = 6 j = 37 nonZeroCount = 1 flag = true
+In eastThinning, i = 7 j = 11 nonZeroCount = 5 flag = false
+In eastThinning, i = 7 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 7 j = 32 nonZeroCount = 5 flag = false
+In eastThinning, i = 7 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 8 j = 11 nonZeroCount = 5 flag = false
+In eastThinning, i = 8 j = 15 nonZeroCount = 1 flag = true
+In eastThinning, i = 8 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 8 j = 32 nonZeroCount = 5 flag = false
+In eastThinning, i = 8 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 9 j = 11 nonZeroCount = 5 flag = false
+In eastThinning, i = 9 j = 15 nonZeroCount = 2 flag = true
+In eastThinning, i = 9 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 9 j = 25 nonZeroCount = 1 flag = true
+In eastThinning, i = 9 j = 32 nonZeroCount = 5 flag = false
+In eastThinning, i = 9 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 11 nonZeroCount = 5 flag = false
+In eastThinning, i = 10 j = 15 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 25 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 32 nonZeroCount = 5 flag = false
+In eastThinning, i = 10 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 11 nonZeroCount = 5 flag = false
+In eastThinning, i = 11 j = 15 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 25 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 32 nonZeroCount = 6 flag = false
+In eastThinning, i = 11 j = 37 nonZeroCount = 3 flag = true
+In eastThinning, i = 12 j = 11 nonZeroCount = 6 flag = false
+In eastThinning, i = 12 j = 15 nonZeroCount = 4 flag = true
+In eastThinning, i = 12 j = 19 nonZeroCount = 4 flag = true
+In eastThinning, i = 12 j = 25 nonZeroCount = 4 flag = true
+In eastThinning, i = 12 j = 37 nonZeroCount = 3 flag = false
+In eastThinning, i = 13 j = 32 nonZeroCount = 6 flag = false
+In eastThinning, i = 13 j = 37 nonZeroCount = 3 flag = true
+In eastThinning, i = 14 j = 11 nonZeroCount = 6 flag = false
+In eastThinning, i = 14 j = 19 nonZeroCount = 4 flag = true
+In eastThinning, i = 14 j = 32 nonZeroCount = 5 flag = false
+In eastThinning, i = 14 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 15 j = 11 nonZeroCount = 5 flag = false
+In eastThinning, i = 15 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 15 j = 32 nonZeroCount = 5 flag = false
+In eastThinning, i = 15 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 16 j = 11 nonZeroCount = 4 flag = false
+In eastThinning, i = 16 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 16 j = 32 nonZeroCount = 4 flag = false
+In eastThinning, i = 16 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 17 j = 10 nonZeroCount = 3 flag = true
+In eastThinning, i = 17 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 17 j = 31 nonZeroCount = 3 flag = true
+In eastThinning, i = 17 j = 37 nonZeroCount = 1 flag = true
+In eastThinning, i = 18 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 18 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 18 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 19 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 19 j = 19 nonZeroCount = 3 flag = true
+In eastThinning, i = 19 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 20 j = 10 nonZeroCount = 1 flag = true
+In eastThinning, i = 20 j = 18 nonZeroCount = 1 flag = true
+In eastThinning, i = 20 j = 20 nonZeroCount = 1 flag = true
+In eastThinning, i = 20 j = 31 nonZeroCount = 1 flag = true
+Leaving eastThinning(), cycleCount = 1 changeCount = 56
+After eastThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 5 5 5 5 5 5 . . . 
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Leaving thinning(), cycleCount = 1 changeCount = 56
+Entering thinning(), before thinning 4 sides, arrayOne is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 5 5 5 5 5 5 . . . 
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering northThinning(), cycleCount = 2 changeCount = 0
+In northThinning, i = 2 j = 10 nonZeroCount = 1 flag = true
+In northThinning, i = 2 j = 18 nonZeroCount = 1 flag = true
+In northThinning, i = 2 j = 20 nonZeroCount = 1 flag = true
+In northThinning, i = 2 j = 31 nonZeroCount = 1 flag = true
+In northThinning, i = 3 j = 19 nonZeroCount = 3 flag = true
+In northThinning, i = 6 j = 37 nonZeroCount = 1 flag = true
+In northThinning, i = 8 j = 15 nonZeroCount = 1 flag = true
+In northThinning, i = 9 j = 25 nonZeroCount = 1 flag = true
+In northThinning, i = 12 j = 32 nonZeroCount = 4 flag = true
+In northThinning, i = 12 j = 33 nonZeroCount = 2 flag = true
+In northThinning, i = 12 j = 34 nonZeroCount = 2 flag = true
+In northThinning, i = 12 j = 35 nonZeroCount = 2 flag = true
+In northThinning, i = 12 j = 36 nonZeroCount = 4 flag = true
+In northThinning, i = 13 j = 11 nonZeroCount = 4 flag = true
+In northThinning, i = 13 j = 12 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 13 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 14 nonZeroCount = 3 flag = true
+In northThinning, i = 13 j = 16 nonZeroCount = 3 flag = true
+In northThinning, i = 13 j = 17 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 18 nonZeroCount = 4 flag = true
+In northThinning, i = 13 j = 20 nonZeroCount = 4 flag = true
+In northThinning, i = 13 j = 21 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 22 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 23 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 24 nonZeroCount = 3 flag = true
+In northThinning, i = 13 j = 26 nonZeroCount = 3 flag = true
+In northThinning, i = 13 j = 27 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 28 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 29 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 30 nonZeroCount = 4 flag = true
+In northThinning, i = 20 j = 18 nonZeroCount = 1 flag = true
+In northThinning, i = 20 j = 20 nonZeroCount = 1 flag = true
+Leaving northThinning(), cycleCount = 2 changeCount = 0
+After northThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 5 5 5 5 5 5 . . . 
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering southThinning(), cycleCount = 2 changeCount = 0
+In southThinning, i = 2 j = 18 nonZeroCount = 1 flag = true
+In southThinning, i = 2 j = 20 nonZeroCount = 1 flag = true
+In southThinning, i = 12 j = 32 nonZeroCount = 4 flag = true
+In southThinning, i = 12 j = 33 nonZeroCount = 2 flag = true
+In southThinning, i = 12 j = 34 nonZeroCount = 2 flag = true
+In southThinning, i = 12 j = 35 nonZeroCount = 2 flag = true
+In southThinning, i = 12 j = 36 nonZeroCount = 4 flag = true
+In southThinning, i = 13 j = 11 nonZeroCount = 4 flag = true
+In southThinning, i = 13 j = 12 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 13 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 14 nonZeroCount = 3 flag = true
+In southThinning, i = 13 j = 15 nonZeroCount = 3 flag = false
+In southThinning, i = 13 j = 16 nonZeroCount = 3 flag = true
+In southThinning, i = 13 j = 17 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 18 nonZeroCount = 4 flag = true
+In southThinning, i = 13 j = 20 nonZeroCount = 4 flag = true
+In southThinning, i = 13 j = 21 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 22 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 23 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 24 nonZeroCount = 3 flag = true
+In southThinning, i = 13 j = 25 nonZeroCount = 3 flag = false
+In southThinning, i = 13 j = 26 nonZeroCount = 3 flag = true
+In southThinning, i = 13 j = 27 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 28 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 29 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 30 nonZeroCount = 4 flag = true
+In southThinning, i = 17 j = 37 nonZeroCount = 1 flag = true
+In southThinning, i = 19 j = 19 nonZeroCount = 3 flag = true
+In southThinning, i = 20 j = 10 nonZeroCount = 1 flag = true
+In southThinning, i = 20 j = 18 nonZeroCount = 1 flag = true
+In southThinning, i = 20 j = 20 nonZeroCount = 1 flag = true
+In southThinning, i = 20 j = 31 nonZeroCount = 1 flag = true
+Leaving southThinning(), cycleCount = 2 changeCount = 0
+After southThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 5 5 5 5 5 5 . . . 
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering westThinning(), cycleCount = 2 changeCount = 0
+In westThinning, i = 2 j = 10 nonZeroCount = 1 flag = true
+In westThinning, i = 2 j = 18 nonZeroCount = 1 flag = true
+In westThinning, i = 2 j = 20 nonZeroCount = 1 flag = true
+In westThinning, i = 2 j = 31 nonZeroCount = 1 flag = true
+In westThinning, i = 3 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 3 j = 19 nonZeroCount = 3 flag = true
+In westThinning, i = 3 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 4 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 4 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 4 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 5 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 5 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 5 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 6 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 6 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 6 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 6 j = 37 nonZeroCount = 1 flag = true
+In westThinning, i = 7 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 7 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 7 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 7 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 8 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 8 j = 15 nonZeroCount = 1 flag = true
+In westThinning, i = 8 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 8 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 8 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 9 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 9 j = 15 nonZeroCount = 2 flag = true
+In westThinning, i = 9 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 9 j = 25 nonZeroCount = 1 flag = true
+In westThinning, i = 9 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 9 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 15 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 25 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 15 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 25 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 31 nonZeroCount = 3 flag = true
+In westThinning, i = 11 j = 37 nonZeroCount = 3 flag = true
+In westThinning, i = 12 j = 10 nonZeroCount = 3 flag = true
+In westThinning, i = 12 j = 15 nonZeroCount = 4 flag = true
+In westThinning, i = 12 j = 19 nonZeroCount = 4 flag = true
+In westThinning, i = 12 j = 25 nonZeroCount = 4 flag = true
+In westThinning, i = 12 j = 31 nonZeroCount = 4 flag = false
+In westThinning, i = 13 j = 10 nonZeroCount = 3 flag = false
+In westThinning, i = 13 j = 37 nonZeroCount = 3 flag = true
+In westThinning, i = 14 j = 10 nonZeroCount = 3 flag = true
+In westThinning, i = 14 j = 19 nonZeroCount = 4 flag = true
+In westThinning, i = 14 j = 31 nonZeroCount = 3 flag = true
+In westThinning, i = 14 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 15 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 15 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 15 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 15 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 16 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 16 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 16 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 16 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 17 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 17 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 17 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 17 j = 37 nonZeroCount = 1 flag = true
+In westThinning, i = 18 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 18 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 18 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 19 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 19 j = 19 nonZeroCount = 3 flag = true
+In westThinning, i = 19 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 20 j = 10 nonZeroCount = 1 flag = true
+In westThinning, i = 20 j = 18 nonZeroCount = 1 flag = true
+In westThinning, i = 20 j = 20 nonZeroCount = 1 flag = true
+In westThinning, i = 20 j = 31 nonZeroCount = 1 flag = true
+Leaving westThinning(), cycleCount = 2 changeCount = 1
+After westThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . . 5 5 5 5 5 5 . . . 
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering eastThinning(), cycleCount = 2 changeCount = 1
+In eastThinning, i = 2 j = 10 nonZeroCount = 1 flag = true
+In eastThinning, i = 2 j = 18 nonZeroCount = 1 flag = true
+In eastThinning, i = 2 j = 20 nonZeroCount = 1 flag = true
+In eastThinning, i = 2 j = 31 nonZeroCount = 1 flag = true
+In eastThinning, i = 3 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 3 j = 19 nonZeroCount = 3 flag = true
+In eastThinning, i = 3 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 4 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 4 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 4 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 5 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 5 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 5 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 6 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 6 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 6 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 6 j = 37 nonZeroCount = 1 flag = true
+In eastThinning, i = 7 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 7 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 7 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 7 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 8 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 8 j = 15 nonZeroCount = 1 flag = true
+In eastThinning, i = 8 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 8 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 8 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 9 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 9 j = 15 nonZeroCount = 2 flag = true
+In eastThinning, i = 9 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 9 j = 25 nonZeroCount = 1 flag = true
+In eastThinning, i = 9 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 9 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 15 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 25 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 15 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 25 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 37 nonZeroCount = 3 flag = true
+In eastThinning, i = 12 j = 10 nonZeroCount = 3 flag = true
+In eastThinning, i = 12 j = 15 nonZeroCount = 4 flag = true
+In eastThinning, i = 12 j = 19 nonZeroCount = 4 flag = true
+In eastThinning, i = 12 j = 25 nonZeroCount = 4 flag = true
+In eastThinning, i = 12 j = 37 nonZeroCount = 3 flag = false
+In eastThinning, i = 13 j = 31 nonZeroCount = 3 flag = false
+In eastThinning, i = 13 j = 37 nonZeroCount = 3 flag = true
+In eastThinning, i = 14 j = 10 nonZeroCount = 3 flag = true
+In eastThinning, i = 14 j = 19 nonZeroCount = 4 flag = true
+In eastThinning, i = 14 j = 31 nonZeroCount = 3 flag = true
+In eastThinning, i = 14 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 15 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 15 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 15 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 15 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 16 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 16 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 16 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 16 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 17 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 17 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 17 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 17 j = 37 nonZeroCount = 1 flag = true
+In eastThinning, i = 18 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 18 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 18 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 19 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 19 j = 19 nonZeroCount = 3 flag = true
+In eastThinning, i = 19 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 20 j = 10 nonZeroCount = 1 flag = true
+In eastThinning, i = 20 j = 18 nonZeroCount = 1 flag = true
+In eastThinning, i = 20 j = 20 nonZeroCount = 1 flag = true
+In eastThinning, i = 20 j = 31 nonZeroCount = 1 flag = true
+Leaving eastThinning(), cycleCount = 2 changeCount = 1
+After eastThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . . 5 5 5 5 5 5 . . . 
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Leaving thinning(), cycleCount = 2 changeCount = 1
+Entering thinning(), before thinning 4 sides, arrayOne is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . . 5 5 5 5 5 5 . . . 
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering northThinning(), cycleCount = 3 changeCount = 0
+In northThinning, i = 2 j = 10 nonZeroCount = 1 flag = true
+In northThinning, i = 2 j = 18 nonZeroCount = 1 flag = true
+In northThinning, i = 2 j = 20 nonZeroCount = 1 flag = true
+In northThinning, i = 2 j = 31 nonZeroCount = 1 flag = true
+In northThinning, i = 3 j = 19 nonZeroCount = 3 flag = true
+In northThinning, i = 6 j = 37 nonZeroCount = 1 flag = true
+In northThinning, i = 8 j = 15 nonZeroCount = 1 flag = true
+In northThinning, i = 9 j = 25 nonZeroCount = 1 flag = true
+In northThinning, i = 12 j = 32 nonZeroCount = 3 flag = true
+In northThinning, i = 12 j = 33 nonZeroCount = 2 flag = true
+In northThinning, i = 12 j = 34 nonZeroCount = 2 flag = true
+In northThinning, i = 12 j = 35 nonZeroCount = 2 flag = true
+In northThinning, i = 12 j = 36 nonZeroCount = 4 flag = true
+In northThinning, i = 13 j = 11 nonZeroCount = 4 flag = true
+In northThinning, i = 13 j = 12 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 13 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 14 nonZeroCount = 3 flag = true
+In northThinning, i = 13 j = 16 nonZeroCount = 3 flag = true
+In northThinning, i = 13 j = 17 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 18 nonZeroCount = 4 flag = true
+In northThinning, i = 13 j = 20 nonZeroCount = 4 flag = true
+In northThinning, i = 13 j = 21 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 22 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 23 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 24 nonZeroCount = 3 flag = true
+In northThinning, i = 13 j = 26 nonZeroCount = 3 flag = true
+In northThinning, i = 13 j = 27 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 28 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 29 nonZeroCount = 2 flag = true
+In northThinning, i = 13 j = 30 nonZeroCount = 3 flag = true
+In northThinning, i = 13 j = 31 nonZeroCount = 3 flag = false
+In northThinning, i = 20 j = 18 nonZeroCount = 1 flag = true
+In northThinning, i = 20 j = 20 nonZeroCount = 1 flag = true
+Leaving northThinning(), cycleCount = 3 changeCount = 0
+After northThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . . 5 5 5 5 5 5 . . . 
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering southThinning(), cycleCount = 3 changeCount = 0
+In southThinning, i = 2 j = 18 nonZeroCount = 1 flag = true
+In southThinning, i = 2 j = 20 nonZeroCount = 1 flag = true
+In southThinning, i = 11 j = 31 nonZeroCount = 2 flag = true
+In southThinning, i = 12 j = 32 nonZeroCount = 3 flag = true
+In southThinning, i = 12 j = 33 nonZeroCount = 2 flag = true
+In southThinning, i = 12 j = 34 nonZeroCount = 2 flag = true
+In southThinning, i = 12 j = 35 nonZeroCount = 2 flag = true
+In southThinning, i = 12 j = 36 nonZeroCount = 4 flag = true
+In southThinning, i = 13 j = 11 nonZeroCount = 4 flag = true
+In southThinning, i = 13 j = 12 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 13 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 14 nonZeroCount = 3 flag = true
+In southThinning, i = 13 j = 15 nonZeroCount = 3 flag = false
+In southThinning, i = 13 j = 16 nonZeroCount = 3 flag = true
+In southThinning, i = 13 j = 17 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 18 nonZeroCount = 4 flag = true
+In southThinning, i = 13 j = 20 nonZeroCount = 4 flag = true
+In southThinning, i = 13 j = 21 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 22 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 23 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 24 nonZeroCount = 3 flag = true
+In southThinning, i = 13 j = 25 nonZeroCount = 3 flag = false
+In southThinning, i = 13 j = 26 nonZeroCount = 3 flag = true
+In southThinning, i = 13 j = 27 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 28 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 29 nonZeroCount = 2 flag = true
+In southThinning, i = 13 j = 30 nonZeroCount = 3 flag = true
+In southThinning, i = 17 j = 37 nonZeroCount = 1 flag = true
+In southThinning, i = 19 j = 19 nonZeroCount = 3 flag = true
+In southThinning, i = 20 j = 10 nonZeroCount = 1 flag = true
+In southThinning, i = 20 j = 18 nonZeroCount = 1 flag = true
+In southThinning, i = 20 j = 20 nonZeroCount = 1 flag = true
+In southThinning, i = 20 j = 31 nonZeroCount = 1 flag = true
+Leaving southThinning(), cycleCount = 3 changeCount = 0
+After southThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . . 5 5 5 5 5 5 . . . 
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering westThinning(), cycleCount = 3 changeCount = 0
+In westThinning, i = 2 j = 10 nonZeroCount = 1 flag = true
+In westThinning, i = 2 j = 18 nonZeroCount = 1 flag = true
+In westThinning, i = 2 j = 20 nonZeroCount = 1 flag = true
+In westThinning, i = 2 j = 31 nonZeroCount = 1 flag = true
+In westThinning, i = 3 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 3 j = 19 nonZeroCount = 3 flag = true
+In westThinning, i = 3 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 4 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 4 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 4 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 5 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 5 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 5 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 6 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 6 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 6 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 6 j = 37 nonZeroCount = 1 flag = true
+In westThinning, i = 7 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 7 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 7 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 7 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 8 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 8 j = 15 nonZeroCount = 1 flag = true
+In westThinning, i = 8 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 8 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 8 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 9 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 9 j = 15 nonZeroCount = 2 flag = true
+In westThinning, i = 9 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 9 j = 25 nonZeroCount = 1 flag = true
+In westThinning, i = 9 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 9 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 15 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 25 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 10 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 15 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 25 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 11 j = 37 nonZeroCount = 3 flag = true
+In westThinning, i = 12 j = 10 nonZeroCount = 3 flag = true
+In westThinning, i = 12 j = 15 nonZeroCount = 4 flag = true
+In westThinning, i = 12 j = 19 nonZeroCount = 4 flag = true
+In westThinning, i = 12 j = 25 nonZeroCount = 4 flag = true
+In westThinning, i = 12 j = 32 nonZeroCount = 3 flag = true
+In westThinning, i = 13 j = 10 nonZeroCount = 3 flag = false
+In westThinning, i = 13 j = 37 nonZeroCount = 3 flag = true
+In westThinning, i = 14 j = 10 nonZeroCount = 3 flag = true
+In westThinning, i = 14 j = 19 nonZeroCount = 4 flag = true
+In westThinning, i = 14 j = 31 nonZeroCount = 3 flag = true
+In westThinning, i = 14 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 15 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 15 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 15 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 15 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 16 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 16 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 16 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 16 j = 37 nonZeroCount = 2 flag = true
+In westThinning, i = 17 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 17 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 17 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 17 j = 37 nonZeroCount = 1 flag = true
+In westThinning, i = 18 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 18 j = 19 nonZeroCount = 2 flag = true
+In westThinning, i = 18 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 19 j = 10 nonZeroCount = 2 flag = true
+In westThinning, i = 19 j = 19 nonZeroCount = 3 flag = true
+In westThinning, i = 19 j = 31 nonZeroCount = 2 flag = true
+In westThinning, i = 20 j = 10 nonZeroCount = 1 flag = true
+In westThinning, i = 20 j = 18 nonZeroCount = 1 flag = true
+In westThinning, i = 20 j = 20 nonZeroCount = 1 flag = true
+In westThinning, i = 20 j = 31 nonZeroCount = 1 flag = true
+Leaving westThinning(), cycleCount = 3 changeCount = 0
+After westThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . . 5 5 5 5 5 5 . . . 
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Entering eastThinning(), cycleCount = 3 changeCount = 0
+In eastThinning, i = 2 j = 10 nonZeroCount = 1 flag = true
+In eastThinning, i = 2 j = 18 nonZeroCount = 1 flag = true
+In eastThinning, i = 2 j = 20 nonZeroCount = 1 flag = true
+In eastThinning, i = 2 j = 31 nonZeroCount = 1 flag = true
+In eastThinning, i = 3 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 3 j = 19 nonZeroCount = 3 flag = true
+In eastThinning, i = 3 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 4 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 4 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 4 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 5 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 5 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 5 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 6 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 6 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 6 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 6 j = 37 nonZeroCount = 1 flag = true
+In eastThinning, i = 7 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 7 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 7 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 7 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 8 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 8 j = 15 nonZeroCount = 1 flag = true
+In eastThinning, i = 8 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 8 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 8 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 9 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 9 j = 15 nonZeroCount = 2 flag = true
+In eastThinning, i = 9 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 9 j = 25 nonZeroCount = 1 flag = true
+In eastThinning, i = 9 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 9 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 15 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 25 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 10 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 15 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 25 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 11 j = 37 nonZeroCount = 3 flag = true
+In eastThinning, i = 12 j = 10 nonZeroCount = 3 flag = true
+In eastThinning, i = 12 j = 15 nonZeroCount = 4 flag = true
+In eastThinning, i = 12 j = 19 nonZeroCount = 4 flag = true
+In eastThinning, i = 12 j = 25 nonZeroCount = 4 flag = true
+In eastThinning, i = 12 j = 37 nonZeroCount = 3 flag = false
+In eastThinning, i = 13 j = 31 nonZeroCount = 3 flag = false
+In eastThinning, i = 13 j = 37 nonZeroCount = 3 flag = true
+In eastThinning, i = 14 j = 10 nonZeroCount = 3 flag = true
+In eastThinning, i = 14 j = 19 nonZeroCount = 4 flag = true
+In eastThinning, i = 14 j = 31 nonZeroCount = 3 flag = true
+In eastThinning, i = 14 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 15 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 15 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 15 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 15 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 16 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 16 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 16 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 16 j = 37 nonZeroCount = 2 flag = true
+In eastThinning, i = 17 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 17 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 17 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 17 j = 37 nonZeroCount = 1 flag = true
+In eastThinning, i = 18 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 18 j = 19 nonZeroCount = 2 flag = true
+In eastThinning, i = 18 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 19 j = 10 nonZeroCount = 2 flag = true
+In eastThinning, i = 19 j = 19 nonZeroCount = 3 flag = true
+In eastThinning, i = 19 j = 31 nonZeroCount = 2 flag = true
+In eastThinning, i = 20 j = 10 nonZeroCount = 1 flag = true
+In eastThinning, i = 20 j = 18 nonZeroCount = 1 flag = true
+In eastThinning, i = 20 j = 20 nonZeroCount = 1 flag = true
+In eastThinning, i = 20 j = 31 nonZeroCount = 1 flag = true
+Leaving eastThinning(), cycleCount = 3 changeCount = 0
+After eastThinning(), arrayTwo is below
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . 5 . . . 5 . . . . . 5 . . . . . . 5 5 5 5 5 5 . . . 
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . 5 . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . . 5 . . . . . . . . . . . 5 . . . . . . . . . 
+. . . . . . . . . 5 . . . . . . . 5 . 5 . . . . . . . . . . 5 . . . . . . . . . 
+Leaving thinning(), cycleCount = 3 changeCount = 0
